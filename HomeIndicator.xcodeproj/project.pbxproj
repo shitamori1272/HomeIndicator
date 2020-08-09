@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69724DFDFD200ADA51B /* SpotListView.swift */; };
+		710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69924E01C7500ADA51B /* LocationFetcher.swift */; };
+		710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69B24E02A1400ADA51B /* IndicatorView.swift */; };
 		71220E7324D6FC7700BA6013 /* HomeIndicator WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		71220E7924D6FC7700BA6013 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7724D6FC7700BA6013 /* Interface.storyboard */; };
 		71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7A24D6FC7E00BA6013 /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		710AD69724DFDFD200ADA51B /* SpotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListView.swift; sourceTree = "<group>"; };
+		710AD69924E01C7500ADA51B /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		710AD69B24E02A1400ADA51B /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		71220E6E24D6FC7700BA6013 /* HomeIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeIndicator WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E7824D6FC7700BA6013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		71220E8524D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
 				71220E8624D6FC7F00BA6013 /* ContentView.swift */,
 				71220E8824D6FC7F00BA6013 /* HostingController.swift */,
 				710AD69724DFDFD200ADA51B /* SpotListView.swift */,
@@ -138,6 +143,7 @@
 				71220E9724D6FC7F00BA6013 /* Info.plist */,
 				71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */,
 				71220E9424D6FC7F00BA6013 /* Preview Content */,
+				710AD69B24E02A1400ADA51B /* IndicatorView.swift */,
 			);
 			path = "HomeIndicator WatchKit Extension";
 			sourceTree = "<group>";
@@ -280,7 +286,9 @@
 			files = (
 				710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */,
 				71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */,
+				710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */,
 				71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */,
+				710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */,
 				71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */,
 				71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */,
 				71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */,

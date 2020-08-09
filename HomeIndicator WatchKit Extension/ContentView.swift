@@ -10,21 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let locationManager = CLLocationManager()
-    
-    @State var currentLocation: CLLocation? = CLLocation()
-    
+    @ObservedObject var locationFetcher = LocationFetcher()
+
     @State var spotData = SpotData.createDataList()[0]
 
     var body: some View {
         VStack {
             SpotDataView(spotData: spotData)
             Divider()
-            Text(currentLocation?.distance(from: spotData.location).description ?? "")
-            Text(currentLocation?.angle(target: spotData.location).description ?? "")
+            Text(locationFetcher.lastKnownLocation?.distance(from: spotData.location).description ?? "")
+            Text(locationFetcher.lastKnownLocation?.angle(target: spotData.location).description ?? "")
             Button(action: {
-                self.locationManager.requestWhenInUseAuthorization()
-                self.currentLocation = self.locationManager.location
+                self.locationFetcher.start()
             }) {
                 Text("現在地更新")
             }
@@ -85,6 +82,5 @@ extension CLLocation {
             return 360 + atan2(y, x) * 180 / CGFloat.pi
         }
         return atan2(y, x) * 180 / CGFloat.pi
-        
     }
 }
