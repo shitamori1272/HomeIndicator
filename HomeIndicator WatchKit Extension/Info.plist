@@ -50,5 +50,9 @@
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To Store Location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>To Store Location</string>
 </dict>
 </plist>
