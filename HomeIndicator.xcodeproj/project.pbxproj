@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69724DFDFD200ADA51B /* SpotListView.swift */; };
 		71220E7324D6FC7700BA6013 /* HomeIndicator WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		71220E7924D6FC7700BA6013 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7724D6FC7700BA6013 /* Interface.storyboard */; };
 		71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7A24D6FC7E00BA6013 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		710AD69724DFDFD200ADA51B /* SpotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListView.swift; sourceTree = "<group>"; };
 		71220E6E24D6FC7700BA6013 /* HomeIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeIndicator WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E7824D6FC7700BA6013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				71220E8624D6FC7F00BA6013 /* ContentView.swift */,
 				71220E8824D6FC7F00BA6013 /* HostingController.swift */,
+				710AD69724DFDFD200ADA51B /* SpotListView.swift */,
 				71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */,
 				71220E8C24D6FC7F00BA6013 /* NotificationController.swift */,
 				71220E8E24D6FC7F00BA6013 /* NotificationView.swift */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */,
 				71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */,
 				71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */,
 				71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */,
