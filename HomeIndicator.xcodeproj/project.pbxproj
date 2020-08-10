@@ -134,6 +134,7 @@
 				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
 				71220E8624D6FC7F00BA6013 /* ContentView.swift */,
 				71220E8824D6FC7F00BA6013 /* HostingController.swift */,
+				710AD69B24E02A1400ADA51B /* IndicatorView.swift */,
 				710AD69724DFDFD200ADA51B /* SpotListView.swift */,
 				71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */,
 				71220E8C24D6FC7F00BA6013 /* NotificationController.swift */,
@@ -143,7 +144,6 @@
 				71220E9724D6FC7F00BA6013 /* Info.plist */,
 				71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */,
 				71220E9424D6FC7F00BA6013 /* Preview Content */,
-				710AD69B24E02A1400ADA51B /* IndicatorView.swift */,
 			);
 			path = "HomeIndicator WatchKit Extension";
 			sourceTree = "<group>";

@@ -30,6 +30,7 @@ struct NewSpotView: View {
                 Image("icn_plus")
                     .resizable()
                     .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .center)
             }
         }
     }

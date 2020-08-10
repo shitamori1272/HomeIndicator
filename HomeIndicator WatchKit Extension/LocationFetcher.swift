@@ -13,6 +13,8 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
     @Published var lastKnownLocation: CLLocation?
     @Published var lastKnownHeading: CLHeading?
+    
+    var angle: Double? { lastKnownHeading?.magneticHeading }
 
     override init() {
         super.init()

@@ -13,20 +13,25 @@ struct ContentView: View {
     @ObservedObject var locationFetcher = LocationFetcher()
 
     @State var spotData = SpotData.createDataList()[0]
+    
+    var angle: CGFloat { locationFetcher.lastKnownLocation?.angle(target: spotData.location) ?? 0 }
 
     var body: some View {
-        VStack {
-            SpotDataView(spotData: spotData)
-            Divider()
-            Text(locationFetcher.lastKnownLocation?.distance(from: spotData.location).description ?? "")
-            Text(locationFetcher.lastKnownLocation?.angle(target: spotData.location).description ?? "")
-            Button(action: {
-                self.locationFetcher.start()
-            }) {
-                Text("現在地更新")
-            }
-            NavigationLink(destination: SpotListView()) {
-                Text("登録スポット一覧")
+        ScrollView {
+            VStack {
+                SpotDataView(spotData: spotData)
+                Divider()
+                IndicatorView(angle: angle * 100000, distance: 0)
+                Text(locationFetcher.lastKnownLocation?.distance(from: spotData.location).description ?? "")
+                Text(angle.description)
+                Button(action: {
+                    self.locationFetcher.start()
+                }) {
+                    Text("現在地更新")
+                }
+                NavigationLink(destination: SpotListView()) {
+                    Text("登録スポット一覧")
+                }
             }
         }
     }

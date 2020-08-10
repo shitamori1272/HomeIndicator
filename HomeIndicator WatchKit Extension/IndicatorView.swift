@@ -14,7 +14,18 @@ struct IndicatorView: View {
     var distance: CGFloat
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Circle()
+                .stroke()
+            Circle()
+                .inset(by: 20)
+                .stroke()
+                .foregroundColor(.red)
+            Rectangle()
+                .frame(width: 20, height: 50, alignment: .center)
+                .foregroundColor(.red)
+                .rotationEffect(Angle(radians: Double(angle)))
+        }
     }
 }
 
