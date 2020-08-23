@@ -25,6 +25,7 @@ struct IndicatorView: View {
                 .frame(width: 20, height: 50, alignment: .center)
                 .foregroundColor(.red)
                 .rotationEffect(Angle(radians: Double(angle)))
+                .animation(.linear)
         }
     }
 }
