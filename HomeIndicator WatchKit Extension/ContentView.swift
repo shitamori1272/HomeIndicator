@@ -22,6 +22,7 @@ struct ContentView: View {
                 SpotDataView(spotData: spotData)
                 Divider()
                 IndicatorView(angle: angle * 100000, distance: 0)
+                    .frame(width: 100, height: 100, alignment: .center)
                 Text(locationFetcher.lastKnownLocation?.distance(from: spotData.location).description ?? "")
                 Text(angle.description)
                 Button(action: {
