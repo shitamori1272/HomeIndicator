@@ -14,14 +14,18 @@ struct ContentView: View {
 
     @State var spotData = SpotData.createDataList()[0]
     
-    var angle: CGFloat { locationFetcher.lastKnownLocation?.angle(target: spotData.location) ?? 0 }
-
+    var angle: CGFloat {
+        guard let lastLocation = locationFetcher.lastKnownLocation,
+              let lastHeading = locationFetcher.lastKnownHeading else { return 0 }
+        return lastLocation.angle(target: spotData.location) + CGFloat(lastHeading.magneticHeading)
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
                 SpotDataView(spotData: spotData)
                 Divider()
-                IndicatorView(angle: angle * 100000, distance: 0)
+                IndicatorView(angle: angle, distance: 0)
                     .frame(width: 100, height: 100, alignment: .center)
                 Text(locationFetcher.lastKnownLocation?.distance(from: spotData.location).description ?? "")
                 Text(angle.description)
@@ -59,7 +63,7 @@ struct SpotData: Identifiable {
     
     static func createDataList() -> [SpotData] {
         let size = 4
-        return (0..<size).map { SpotData(name: "spot\($0)", location: CLLocation())}
+        return (0..<size).map { SpotData(name: "spot\($0)", location: CLLocation(latitude: 35.709352, longitude: 139.8253409))}
     }
 }
 
