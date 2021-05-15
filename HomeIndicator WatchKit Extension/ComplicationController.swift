@@ -7,6 +7,7 @@
 //
 
 import ClockKit
+import SwiftUI
 
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
@@ -33,7 +34,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
+        if let template = getComplicationTemplate(for: complication, using: Date()) {
+            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+            handler(entry)
+        } else {
+            handler(nil)
+        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
@@ -53,4 +59,20 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(nil)
     }
     
+    func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
+        let locationFetcher = LocationFetcher.shared
+        let spotData = SpotData.createDataList()[0]
+        let angle: CGFloat = {
+            guard let lastLocation = locationFetcher.lastKnownLocation,
+                  let lastHeading = locationFetcher.lastKnownHeading else { return 0 }
+            return lastLocation.angle(target: spotData.location) - CGFloat(lastHeading.magneticHeading)
+        }()
+        return CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: CGFloat(angle), distance: 0))
+    }
+}
+
+struct ComplicationController_Previews: PreviewProvider {
+    static var previews: some View {
+        CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: 0, distance: 0)).previewContext()
+    }
 }

@@ -21,17 +21,39 @@ struct IndicatorView: View {
                 .inset(by: 20)
                 .stroke()
                 .foregroundColor(.red)
-            Rectangle()
-                .frame(width: 20, height: 50, alignment: .center)
-                .foregroundColor(.red)
+            ArrowView()
                 .rotationEffect(.degrees(Double(angle)))
                 .animation(.linear)
         }
     }
 }
 
+private struct ArrowView: View {
+    var body: some View {
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
+            Triangle()
+                .frame(width: 40, height: 20, alignment: .center)
+                .foregroundColor(.red)
+            Rectangle()
+                .frame(width: 20, height: 50, alignment: .center)
+                .foregroundColor(.red)
+        }
+    }
+}
+
+struct Triangle: Shape {
+    func path(in rect: CGRect) -> Path {
+        Path { path in
+            path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+            path.closeSubpath()
+        }
+    }
+}
+
 struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        IndicatorView(angle: 20, distance: 20)
+        IndicatorView(angle: 0, distance: 20)
     }
 }

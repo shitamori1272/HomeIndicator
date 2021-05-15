@@ -8,17 +8,21 @@
 
 import CoreLocation
 import Combine
+import ClockKit
 
 class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, LocationProvider {
     let manager = CLLocationManager()
     @Published var lastKnownLocation: CLLocation?
     @Published var lastKnownHeading: CLHeading?
     
+    static let shared = LocationFetcher()
+    
     var angle: Double? { lastKnownHeading?.magneticHeading }
 
-    override init() {
+    private override init() {
         super.init()
         manager.delegate = self
+        manager.allowsBackgroundLocationUpdates = true
     }
     
     func start() {
@@ -29,10 +33,19 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastKnownLocation = locations.first
+        didUpdateCLLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         lastKnownHeading = newHeading
+        didUpdateCLLocation()
+    }
+    
+    func didUpdateCLLocation() {
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        complicationServer.activeComplications?.forEach {
+            complicationServer.reloadTimeline(for: $0)
+        }
     }
 }
 

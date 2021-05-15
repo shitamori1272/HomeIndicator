@@ -7,17 +7,18 @@
 //
 
 import SwiftUI
+import ClockKit
 
 struct ContentView: View {
     
-    @ObservedObject var locationFetcher = LocationFetcher()
+    @ObservedObject var locationFetcher = LocationFetcher.shared
 
     @State var spotData = SpotData.createDataList()[0]
     
     var angle: CGFloat {
         guard let lastLocation = locationFetcher.lastKnownLocation,
               let lastHeading = locationFetcher.lastKnownHeading else { return 0 }
-        return lastLocation.angle(target: spotData.location) + CGFloat(lastHeading.magneticHeading)
+        return lastLocation.angle(target: spotData.location) - CGFloat(lastHeading.magneticHeading)
     }
     
     var body: some View {
@@ -27,8 +28,9 @@ struct ContentView: View {
                 Divider()
                 IndicatorView(angle: angle, distance: 0)
                     .frame(width: 100, height: 100, alignment: .center)
-                Text(locationFetcher.lastKnownLocation?.distance(from: spotData.location).description ?? "")
-                Text(angle.description)
+                Text("目的地まで\(String(format: "%.2f",locationFetcher.lastKnownLocation?.distance(from: spotData.location) ?? 0))m"
+                )
+                Text("\(String(format: "%.2f", angle))度")
                 Button(action: {
                     self.locationFetcher.start()
                 }) {
@@ -63,7 +65,7 @@ struct SpotData: Identifiable {
     
     static func createDataList() -> [SpotData] {
         let size = 4
-        return (0..<size).map { SpotData(name: "spot\($0)", location: CLLocation(latitude: 35.709352, longitude: 139.8253409))}
+        return (0..<size).map { SpotData(name: "spot\($0)", location: CLLocation(latitude: 35.160258, longitude: 136.959906 ))}
     }
 }
 
