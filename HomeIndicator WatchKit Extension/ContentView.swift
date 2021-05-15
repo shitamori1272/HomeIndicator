@@ -31,15 +31,12 @@ struct ContentView: View {
                 Text("目的地まで\(String(format: "%.2f",locationFetcher.lastKnownLocation?.distance(from: spotData.location) ?? 0))m"
                 )
                 Text("\(String(format: "%.2f", angle))度")
-                Button(action: {
-                    self.locationFetcher.start()
-                }) {
-                    Text("現在地更新")
-                }
                 NavigationLink(destination: SpotListView()) {
                     Text("登録スポット一覧")
                 }
             }
+        }.onAppear {
+            self.locationFetcher.start()
         }
     }
 }
