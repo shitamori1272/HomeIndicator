@@ -47,25 +47,6 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct SpotData: Identifiable {
-    var id = UUID()
-    var name: String
-    let updateDate = Date()
-    let location: CLLocation
-    var lat: CLLocationDegrees { location.coordinate.latitude }
-    var lon: CLLocationDegrees { location.coordinate.longitude }
-    
-    init(name: String, location: CLLocation) {
-        self.name = name
-        self.location = location
-    }
-    
-    static func createDataList() -> [SpotData] {
-        let size = 4
-        return (0..<size).map { SpotData(name: "spot\($0)", location: CLLocation(latitude: 35.160258, longitude: 136.959906 ))}
-    }
-}
-
 extension CLLocation {
     
     var text: String {

@@ -22,6 +22,8 @@
 		71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E9024D6FC7F00BA6013 /* ComplicationController.swift */; };
 		71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9224D6FC7F00BA6013 /* Assets.xcassets */; };
 		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
+		71837D0326511F7F005636D8 /* SpotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71837D0226511F7F005636D8 /* SpotData.swift */; };
+		71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71862E26264FEBCC00C8DA54 /* SpotRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		71837D0226511F7F005636D8 /* SpotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotData.swift; sourceTree = "<group>"; };
+		71862E26264FEBCC00C8DA54 /* SpotRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				71220E9724D6FC7F00BA6013 /* Info.plist */,
 				71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */,
 				71220E9424D6FC7F00BA6013 /* Preview Content */,
+				71862E26264FEBCC00C8DA54 /* SpotRepository.swift */,
+				71837D0226511F7F005636D8 /* SpotData.swift */,
 			);
 			path = "HomeIndicator WatchKit Extension";
 			sourceTree = "<group>";
@@ -289,9 +295,11 @@
 				710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */,
 				71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */,
 				710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */,
+				71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */,
 				71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */,
 				71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */,
 				71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */,
+				71837D0326511F7F005636D8 /* SpotData.swift in Sources */,
 				71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,7 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator;
@@ -540,7 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator;
