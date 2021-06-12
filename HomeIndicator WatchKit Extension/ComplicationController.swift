@@ -62,12 +62,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
         let locationFetcher = LocationFetcher.shared
         let spotData = SpotData.createDataList()[0]
-        let angle: CGFloat = {
+        let angle: Float = {
             guard let lastLocation = locationFetcher.lastKnownLocation,
                   let lastHeading = locationFetcher.lastKnownHeading else { return 0 }
-            return lastLocation.angle(target: spotData.location) - CGFloat(lastHeading.magneticHeading)
+            return lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
         }()
-        return CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: CGFloat(angle), distance: 0))
+        return CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: angle, distance: 0))
     }
 }
 

@@ -22,6 +22,14 @@ struct SpotData: Identifiable {
         self.location = location
     }
     
+    func angle(from: CLLocation) -> CLLocationDegrees {
+       return CLLocationDegrees()
+    }
+    
+    func distance(from: CLLocation) -> CLLocationDistance {
+        location.distance(from: from)
+    }
+    
     static func createDataList() -> [SpotData] {
         let size = 4
         return (0..<size).map { SpotData(name: "spot\($0)", location: CLLocation(latitude: 35.160258, longitude: 136.959906 ))}

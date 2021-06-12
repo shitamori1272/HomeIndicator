@@ -24,6 +24,10 @@
 		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
 		71837D0326511F7F005636D8 /* SpotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71837D0226511F7F005636D8 /* SpotData.swift */; };
 		71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71862E26264FEBCC00C8DA54 /* SpotRepository.swift */; };
+		71A443502663D18600A141F7 /* SpoitDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4434F2663D18600A141F7 /* SpoitDataStore.swift */; };
+		71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A443522663D90B00A141F7 /* CLLocation+angle.swift */; };
+		71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A44358266C709C00A141F7 /* SpotRegisterView.swift */; };
+		71A4435B266C717A00A141F7 /* SpotRegisiterUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,10 @@
 		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		71837D0226511F7F005636D8 /* SpotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotData.swift; sourceTree = "<group>"; };
 		71862E26264FEBCC00C8DA54 /* SpotRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepository.swift; sourceTree = "<group>"; };
+		71A4434F2663D18600A141F7 /* SpoitDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoitDataStore.swift; sourceTree = "<group>"; };
+		71A443522663D90B00A141F7 /* CLLocation+angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+angle.swift"; sourceTree = "<group>"; };
+		71A44358266C709C00A141F7 /* SpotRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisterView.swift; sourceTree = "<group>"; };
+		71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisiterUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,21 +143,19 @@
 		71220E8524D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				71A44357266C6C6D00A141F7 /* SwiftUI */,
+				71A44355266C6C4E00A141F7 /* Domain */,
+				71A44354266C6C1D00A141F7 /* Repository */,
+				71A443512663D8E800A141F7 /* Extension */,
 				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
-				71220E8624D6FC7F00BA6013 /* ContentView.swift */,
 				71220E8824D6FC7F00BA6013 /* HostingController.swift */,
-				710AD69B24E02A1400ADA51B /* IndicatorView.swift */,
-				710AD69724DFDFD200ADA51B /* SpotListView.swift */,
 				71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */,
 				71220E8C24D6FC7F00BA6013 /* NotificationController.swift */,
-				71220E8E24D6FC7F00BA6013 /* NotificationView.swift */,
 				71220E9024D6FC7F00BA6013 /* ComplicationController.swift */,
 				71220E9224D6FC7F00BA6013 /* Assets.xcassets */,
 				71220E9724D6FC7F00BA6013 /* Info.plist */,
 				71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */,
 				71220E9424D6FC7F00BA6013 /* Preview Content */,
-				71862E26264FEBCC00C8DA54 /* SpotRepository.swift */,
-				71837D0226511F7F005636D8 /* SpotData.swift */,
 			);
 			path = "HomeIndicator WatchKit Extension";
 			sourceTree = "<group>";
@@ -160,6 +166,52 @@
 				71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71A443512663D8E800A141F7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				71A443522663D90B00A141F7 /* CLLocation+angle.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		71A44354266C6C1D00A141F7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				71862E26264FEBCC00C8DA54 /* SpotRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		71A44355266C6C4E00A141F7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				71A4434F2663D18600A141F7 /* SpoitDataStore.swift */,
+				71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */,
+				71A44356266C6C5D00A141F7 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		71A44356266C6C5D00A141F7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				71837D0226511F7F005636D8 /* SpotData.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		71A44357266C6C6D00A141F7 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				71220E8624D6FC7F00BA6013 /* ContentView.swift */,
+				710AD69B24E02A1400ADA51B /* IndicatorView.swift */,
+				710AD69724DFDFD200ADA51B /* SpotListView.swift */,
+				71220E8E24D6FC7F00BA6013 /* NotificationView.swift */,
+				71A44358266C709C00A141F7 /* SpotRegisterView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,13 +343,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */,
+				71A443502663D18600A141F7 /* SpoitDataStore.swift in Sources */,
 				71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */,
 				710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */,
+				71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */,
 				71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */,
 				710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */,
+				71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */,
 				71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */,
 				71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */,
 				71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */,
+				71A4435B266C717A00A141F7 /* SpotRegisiterUsecase.swift in Sources */,
 				71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */,
 				71837D0326511F7F005636D8 /* SpotData.swift in Sources */,
 				71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct IndicatorView: View {
     
-    var angle: CGFloat
+    var angle: Float
     var distance: CGFloat
     
     var body: some View {

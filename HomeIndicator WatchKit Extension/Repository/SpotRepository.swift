@@ -9,31 +9,31 @@
 import Foundation
 
 
-protocol SpotRepository {
+protocol SpotRepositoryProtocol {
     
-    func register(_ spot: SpotData)
+    func save(_ spot: SpotData)
     
-    func load(uuid: UUID) -> SpotData?
+    func find(uuid: UUID) -> SpotData?
     
     func update(_ spot: SpotData, uuid: UUID) -> Bool
     
     func delete(uuid: UUID) -> Bool
     
-    func loadAll() -> [SpotData]
+    func findAll() -> [SpotData]
 }
 
-class SpotRepositoryImpl: SpotRepository {
+class SpotRepository: SpotRepositoryProtocol {
     
     private static let key = "spotDataList"
-    let userDefaults = UserDefaults.standard
+    private let userDefaults = UserDefaults.standard
 
-    func register(_ spot: SpotData) {
+    func save(_ spot: SpotData) {
         var dataList = loadSpotDataList()
         dataList.append(spot)
         _ = saveSpotDataList(dataList)
     }
 
-    func load(uuid: UUID) -> SpotData? {
+    func find(uuid: UUID) -> SpotData? {
         return loadSpotDataList().first(where: { $0.id == uuid })
     }
 
@@ -53,7 +53,7 @@ class SpotRepositoryImpl: SpotRepository {
         return result
     }
 
-    func loadAll() -> [SpotData] {
+    func findAll() -> [SpotData] {
         return loadSpotDataList()
     }
     
