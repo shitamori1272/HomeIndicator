@@ -11,7 +11,7 @@ import Foundation
 class SpotDataStore: ObservableObject {
     @Published private var spotIndex: Int = 0 {
         didSet {
-            spotData = repository.findAll().first ?? SpotData.createDataList()[0]
+            spotData = repository.findAll()[spotIndex] ?? SpotData.createDataList()[0]
         }
     }
     @Published var spotData: SpotData = SpotData.createDataList()[0]

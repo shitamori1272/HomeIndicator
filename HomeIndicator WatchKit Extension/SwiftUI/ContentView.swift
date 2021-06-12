@@ -11,7 +11,7 @@ import ClockKit
 
 struct ContentView: View {
 
-    @ObservedObject var dataStore = SpotDataStore()
+    @ObservedObject var dataStore: SpotDataStore = SpotDataStore()
     
     var body: some View {
         ScrollView {

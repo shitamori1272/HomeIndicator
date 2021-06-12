@@ -12,16 +12,30 @@ struct SpotListView: View {
     
     @ObservedObject var spotDataStore: SpotDataStore
     
+    @State var isShowingSheet = false
+    @State var selectedIndex: Int?
+    
     var body: some View {
         List {
             NewSpotView()
             ForEach(0..<spotDataStore.loadAll().count) { index in
                 Button(action: {
-                    spotDataStore.setIndex(index)
+                    isShowingSheet = true
+                    selectedIndex = index
                 }, label: {
                     SpotDataView(spotData: spotDataStore.loadAll()[index])
                 })
             }
+        }
+        .actionSheet(isPresented: $isShowingSheet) {
+            ActionSheet(title: Text("スポット変更"),
+                        message: Text("このスポットを設定します？"),
+                        buttons: [
+                            .default(Text("はい"), action: {
+                                spotDataStore.setIndex(selectedIndex ?? 0)
+                            })
+                        ]
+            )
         }
     }
 }
