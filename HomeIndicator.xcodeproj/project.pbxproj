@@ -150,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				71A44357266C6C6D00A141F7 /* SwiftUI */,
+				7156A5792704BF6500583DDC /* Usecase */,
 				71A44355266C6C4E00A141F7 /* Domain */,
-				71A44354266C6C1D00A141F7 /* Repository */,
 				71A443512663D8E800A141F7 /* Extension */,
 				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
 				71220E8824D6FC7F00BA6013 /* HostingController.swift */,
@@ -177,6 +177,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7156A5792704BF6500583DDC /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		7156A57C2704BFDF00583DDC /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				71A4434F2663D18600A141F7 /* SpoitDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
 		71A443512663D8E800A141F7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,8 +212,8 @@
 		71A44355266C6C4E00A141F7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				71A4434F2663D18600A141F7 /* SpoitDataStore.swift */,
-				71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */,
+				7156A57C2704BFDF00583DDC /* DataStore */,
+				71A44354266C6C1D00A141F7 /* Repository */,
 				71A44356266C6C5D00A141F7 /* Entity */,
 			);
 			path = Domain;
@@ -527,7 +543,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shitamori.HomeIndicator.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -551,7 +567,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shitamori.HomeIndicator.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;

@@ -20,10 +20,14 @@ protocol SpotRepositoryProtocol {
     func delete(uuid: UUID) -> Bool
     
     func findAll() -> [SpotData]
+    
+    func getIndex() -> Int
+    
+    func setIndex(index: Int)
 }
 
 class SpotRepository: SpotRepositoryProtocol {
-    
+
     private static let key = "spotDataList"
     private let userDefaults = UserDefaults.standard
 
@@ -55,6 +59,14 @@ class SpotRepository: SpotRepositoryProtocol {
 
     func findAll() -> [SpotData] {
         return loadSpotDataList()
+    }
+    
+    func getIndex() -> Int {
+        userDefaults.integer(forKey: "spotIndex")
+    }
+    
+    func setIndex(index: Int) {
+        userDefaults.set(index, forKey: "spotIndex")
     }
     
     private func loadSpotDataList() -> [SpotData] {

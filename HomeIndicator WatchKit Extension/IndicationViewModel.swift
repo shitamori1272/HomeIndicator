@@ -20,7 +20,8 @@ class IndicationViewModel: ObservableObject {
     
     @Published var distance: Double = 0
     
-    init(spotData: SpotData) {
+    init?(spotData: SpotData?) {
+        guard let spotData = spotData else { return nil }
         self.spotData = spotData
         
         locationFecher.locationPublisher().sink { [weak self] _ in

@@ -27,6 +27,9 @@ struct SpotListView: View {
                 })
             }
         }
+//        .onDelete { index in
+//            spotDataStore.delete(at: index)
+//        }
         .actionSheet(isPresented: $isShowingSheet) {
             ActionSheet(title: Text("スポット変更"),
                         message: Text("このスポットを設定します？"),

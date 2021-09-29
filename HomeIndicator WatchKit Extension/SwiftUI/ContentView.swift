@@ -15,12 +15,11 @@ struct ContentView: View {
     @ObservedObject var dataStore: SpotDataStore = SpotDataStore()
     
     @ObservedObject var sessionManager = ExtendedSessionManager()
-    @ObservedObject var viewModel = IndicationViewModel(spotData: SpotDataStore().spotData)
-    
+
     var body: some View {
         ScrollView {
             VStack {
-                Text(dataStore.spotData.name)
+                Text(dataStore.spotData?.name ?? "")
                 IndicatorView(angle: dataStore.angle, distance: dataStore.distance)
                     .frame(width: 100, height: 100, alignment: .center)
                 Text("目的地まで\(String(format: "%.2f",dataStore.distance))m")

@@ -9,33 +9,40 @@
 import Foundation
 
 class SpotDataStore: ObservableObject {
-    @Published private var spotIndex: Int = 0 {
-        didSet {
-            spotData = repository.findAll()[spotIndex] ?? SpotData.createDataList()[0]
-        }
-    }
-    @Published var spotData: SpotData = SpotData.createDataList()[0]
+    @Published var spotData: SpotData?
     @Published var locationFetcher = LocationFetcher.shared
     
     private let repository: SpotRepository = SpotRepository()
     
+    init() {
+        spotData = repository.findAll()[repository.getIndex()]
+    }
+    
     var angle: Float {
         guard let lastLocation = locationFetcher.lastKnownLocation,
-              let lastHeading = locationFetcher.lastKnownHeading else { return 0 }
+              let lastHeading = locationFetcher.lastKnownHeading,
+              let spotData = spotData else { return 0 }
         return lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
     }
     
     var distance: Float {
-        guard let lastLocation = locationFetcher.lastKnownLocation else { return 0 }
+        guard let lastLocation = locationFetcher.lastKnownLocation,
+              let spotData = spotData else { return 0 }
         return Float(spotData.distance(from: lastLocation))
     }
     
-
     func setIndex(_ index: Int) {
-        spotIndex = index
+        repository.setIndex(index: index)
+        spotData = repository.findAll()[repository.getIndex()]
     }
     
     func loadAll() -> [SpotData] {
         repository.findAll()
+    }
+    
+    func delete(at index: Int) {
+        let spot = repository.findAll()[index]
+        _ = repository.delete(uuid: spot.id)
+        setIndex(0)
     }
 }
