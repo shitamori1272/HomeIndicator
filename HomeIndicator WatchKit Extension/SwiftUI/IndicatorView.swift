@@ -11,12 +11,13 @@ import SwiftUI
 struct IndicatorView: View {
     
     var angle: Float
-    var distance: CGFloat
+    var distance: Float
     
     var body: some View {
         ZStack {
             Circle()
                 .stroke()
+            CircleView(distance: distance)
             Circle()
                 .inset(by: 20)
                 .stroke()
@@ -25,6 +26,34 @@ struct IndicatorView: View {
                 .rotationEffect(.degrees(Double(angle)))
                 .animation(.linear)
         }
+    }
+}
+
+private struct CircleView: View {
+    
+    let unitDistance: Float = 100.0
+    let colors: [Color] = [.blue, .green, .yellow, .orange, .red]
+    let distance: Float
+    
+    var body: some View {
+        ZStack {
+            ForEach(0..<colors.count) { index in
+                let to = calcTrimTo(index)
+                Circle()
+                    .trim(from: 1-to, to: 1)
+                    .stroke(
+                        style: StrokeStyle(
+                            lineWidth: 10, lineCap: .round, lineJoin: .round)
+                    )
+                    .foregroundColor(colors[index])
+                    .rotationEffect(Angle(degrees: -90))
+            }
+        }
+    }
+    
+    func calcTrimTo(_ index: Int) -> CGFloat {
+        let remainedDistance = max(distance - (unitDistance * Float(index)), 0)
+        return CGFloat(min(1, remainedDistance/unitDistance))
     }
 }
 
@@ -54,6 +83,6 @@ struct Triangle: Shape {
 
 struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        IndicatorView(angle: 0, distance: 20)
+        IndicatorView(angle: 0, distance: 60)
     }
 }

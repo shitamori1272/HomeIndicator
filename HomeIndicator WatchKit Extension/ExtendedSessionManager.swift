@@ -14,7 +14,6 @@ class ExtendedSessionManager: NSObject, ObservableObject {
     
     @Published var isRunning: Bool = false
         
-    
     func startSession() {
         session?.invalidate()
         session = WKExtendedRuntimeSession()
@@ -38,6 +37,7 @@ class ExtendedSessionManager: NSObject, ObservableObject {
 extension ExtendedSessionManager: WKExtendedRuntimeSessionDelegate {
     func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
         updateRunningStatus()
+        NotificationRegister.registerSessionEndedNotification()
     }
     
     func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {

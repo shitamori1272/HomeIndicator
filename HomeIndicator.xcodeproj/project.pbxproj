@@ -23,6 +23,8 @@
 		71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9224D6FC7F00BA6013 /* Assets.xcassets */; };
 		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
 		71691E1B2674B01500338931 /* ExtendedSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1A2674B01500338931 /* ExtendedSessionManager.swift */; };
+		71691E1D2674C53300338931 /* NotificationRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1C2674C53300338931 /* NotificationRegister.swift */; };
+		71691E1F2674C8AB00338931 /* IndicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1E2674C8AB00338931 /* IndicationViewModel.swift */; };
 		71837D0326511F7F005636D8 /* SpotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71837D0226511F7F005636D8 /* SpotData.swift */; };
 		71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71862E26264FEBCC00C8DA54 /* SpotRepository.swift */; };
 		71A443502663D18600A141F7 /* SpoitDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4434F2663D18600A141F7 /* SpoitDataStore.swift */; };
@@ -94,6 +96,8 @@
 		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		71691E1A2674B01500338931 /* ExtendedSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedSessionManager.swift; sourceTree = "<group>"; };
+		71691E1C2674C53300338931 /* NotificationRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRegister.swift; sourceTree = "<group>"; };
+		71691E1E2674C8AB00338931 /* IndicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicationViewModel.swift; sourceTree = "<group>"; };
 		71837D0226511F7F005636D8 /* SpotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotData.swift; sourceTree = "<group>"; };
 		71862E26264FEBCC00C8DA54 /* SpotRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepository.swift; sourceTree = "<group>"; };
 		71A4434F2663D18600A141F7 /* SpoitDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoitDataStore.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */,
 				71220E9424D6FC7F00BA6013 /* Preview Content */,
 				71691E1A2674B01500338931 /* ExtendedSessionManager.swift */,
+				71691E1C2674C53300338931 /* NotificationRegister.swift */,
+				71691E1E2674C8AB00338931 /* IndicationViewModel.swift */,
 			);
 			path = "HomeIndicator WatchKit Extension";
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71691E1F2674C8AB00338931 /* IndicationViewModel.swift in Sources */,
 				710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */,
 				71A443502663D18600A141F7 /* SpoitDataStore.swift in Sources */,
 				71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */,
@@ -360,6 +367,7 @@
 				71A4435B266C717A00A141F7 /* SpotRegisiterUsecase.swift in Sources */,
 				71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */,
 				71837D0326511F7F005636D8 /* SpotData.swift in Sources */,
+				71691E1D2674C53300338931 /* NotificationRegister.swift in Sources */,
 				71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +527,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shitamori.HomeIndicator.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -543,7 +551,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shitamori.HomeIndicator.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -595,7 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator;
@@ -608,7 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator;

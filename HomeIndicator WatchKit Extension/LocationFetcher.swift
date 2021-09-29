@@ -14,7 +14,8 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     let manager = CLLocationManager()
     @Published var lastKnownLocation: CLLocation?
     @Published var lastKnownHeading: CLHeading?
-    
+    private let locationSubject: PassthroughSubject<Bool, Never> = .init()
+
     static let shared = LocationFetcher()
     
     var angle: Double? { lastKnownHeading?.magneticHeading }
@@ -23,6 +24,10 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
         super.init()
         manager.delegate = self
         manager.allowsBackgroundLocationUpdates = true
+    }
+    
+    func locationPublisher() -> AnyPublisher<Bool, Never> {
+        return locationSubject.eraseToAnyPublisher()
     }
     
     func start() {
@@ -34,11 +39,13 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastKnownLocation = locations.first
         didUpdateCLLocation()
+        locationSubject.send(true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         lastKnownHeading = newHeading
         didUpdateCLLocation()
+        locationSubject.send(true)
     }
     
     func didUpdateCLLocation() {
@@ -83,5 +90,3 @@ class MockLocationProvider: LocationProvider {
         }
     }
 }
-
-
