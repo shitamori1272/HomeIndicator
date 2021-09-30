@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct SpotListView: View {
-    
     @ObservedObject var spotDataStore: SpotDataStore
     
     @State var isShowingSheet = false
@@ -32,7 +31,7 @@ struct SpotListView: View {
 //        }
         .actionSheet(isPresented: $isShowingSheet) {
             ActionSheet(title: Text("スポット変更"),
-                        message: Text("このスポットを設定します？"),
+                        message: Text("このスポットを目的地に設定しますか？"),
                         buttons: [
                             .default(Text("はい"), action: {
                                 spotDataStore.setIndex(selectedIndex ?? 0)
@@ -61,11 +60,10 @@ struct NewSpotView: View {
 struct SpotDataView: View {
     
     var spotData: SpotData
-    
+
     var body: some View {
         HStack {
             Text(spotData.name)
-            Text(spotData.location.text)
         }
     }
 }

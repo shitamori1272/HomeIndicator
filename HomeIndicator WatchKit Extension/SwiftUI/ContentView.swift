@@ -14,8 +14,6 @@ struct ContentView: View {
 
     @ObservedObject var dataStore: SpotDataStore = SpotDataStore()
     
-    @ObservedObject var sessionManager = ExtendedSessionManager()
-
     var body: some View {
         ScrollView {
             VStack {
@@ -24,16 +22,6 @@ struct ContentView: View {
                     .frame(width: 100, height: 100, alignment: .center)
                 Text("目的地まで\(String(format: "%.2f",dataStore.distance))m")
                 Text("\(String(format: "%.2f", dataStore.angle))度")
-                if !sessionManager.isRunning {
-                    Button("Session開始") {
-                        sessionManager.startSession()
-                        NotificationRegister.requestNotificationAutholization()
-                    }
-                } else {
-                    Button("Session終了") {
-                        sessionManager.stopSession()
-                    }
-                }
                 NavigationLink(destination: SpotListView(spotDataStore: dataStore)) {
                     Text("登録スポット一覧")
                 }

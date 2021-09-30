@@ -18,10 +18,6 @@ struct IndicatorView: View {
             Circle()
                 .stroke()
             CircleView(distance: distance)
-            Circle()
-                .inset(by: 20)
-                .stroke()
-                .foregroundColor(.red)
             ArrowView()
                 .rotationEffect(.degrees(Double(angle)))
                 .animation(.linear)
@@ -31,22 +27,25 @@ struct IndicatorView: View {
 
 private struct CircleView: View {
     
-    let unitDistance: Float = 100.0
-    let colors: [Color] = [.blue, .green, .yellow, .orange, .red]
+    let unitDistance: Float = 500.0
+    let strokeWidth: CGFloat = 6.5
+    let colors: [Color] = [.yellow, .orange, .red]
     let distance: Float
     
     var body: some View {
         ZStack {
             ForEach(0..<colors.count) { index in
                 let to = calcTrimTo(index)
+                let circleWidth = CGFloat(Double(index)*2.5) * strokeWidth + CGFloat(60)
                 Circle()
                     .trim(from: 1-to, to: 1)
                     .stroke(
                         style: StrokeStyle(
-                            lineWidth: 10, lineCap: .round, lineJoin: .round)
+                            lineWidth: strokeWidth, lineCap: .round, lineJoin: .round)
                     )
                     .foregroundColor(colors[index])
                     .rotationEffect(Angle(degrees: -90))
+                    .frame(width: circleWidth, height: circleWidth, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
         }
     }
@@ -60,14 +59,24 @@ private struct CircleView: View {
 private struct ArrowView: View {
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
-            Triangle()
-                .frame(width: 40, height: 20, alignment: .center)
-                .foregroundColor(.red)
-            Rectangle()
-                .frame(width: 20, height: 50, alignment: .center)
-                .foregroundColor(.red)
+            Arrow()
+                .frame(width: 40, height: 40, alignment: .center)
+                .foregroundColor(.white)
         }
     }
+}
+
+struct Arrow: Shape {
+    func path(in rect: CGRect) -> Path {
+        Path { path in
+            path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+            path.addLine(to: CGPoint(x: (rect.maxX + rect.midX)/2.0 , y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY * 0.7))
+            path.addLine(to: CGPoint(x: (rect.minX + rect.midX)/2.0, y: rect.maxY))
+            path.closeSubpath()
+        }
+    }
+    
 }
 
 struct Triangle: Shape {
@@ -83,6 +92,6 @@ struct Triangle: Shape {
 
 struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        IndicatorView(angle: 0, distance: 60)
+        IndicatorView(angle: 0, distance: 420)
     }
 }
