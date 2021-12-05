@@ -17,7 +17,7 @@ struct ContentView: View {
         ScrollView {
             VStack {
                 Text(viewModel.spotName)
-                IndicatorView(angle: viewModel.angle, distance: 0)
+                IndicatorView(angle: viewModel.angle, distance: viewModel.distance)
                     .frame(width: 100, height: 100, alignment: .center)
                 Text("目的地まで\(String(format: "%.2f", viewModel.distance))m")
                 Text("\(String(format: "%.2f", viewModel.angle))度")

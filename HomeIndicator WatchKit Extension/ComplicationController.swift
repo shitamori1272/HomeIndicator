@@ -61,7 +61,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
         @ObservedObject var viewModel = ComplicationViewModel()
-        return CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: Float(viewModel.angle), distance: 0))
+        return CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: viewModel.angle, distance: 0))
     }
 }
 

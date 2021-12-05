@@ -10,8 +10,8 @@ import SwiftUI
 
 struct IndicatorView: View {
     
-    var angle: Float
-    var distance: Float
+    var angle: CGFloat
+    var distance: CGFloat
     
     var body: some View {
         ZStack {
@@ -27,10 +27,10 @@ struct IndicatorView: View {
 
 private struct CircleView: View {
     
-    let unitDistance: Float = 500.0
+    let unitDistance: CGFloat = 500.0
     let strokeWidth: CGFloat = 6.5
     let colors: [Color] = [.yellow, .orange, .red]
-    let distance: Float
+    let distance: CGFloat
     
     var body: some View {
         ZStack {
@@ -51,7 +51,7 @@ private struct CircleView: View {
     }
     
     func calcTrimTo(_ index: Int) -> CGFloat {
-        let remainedDistance = max(distance - (unitDistance * Float(index)), 0)
+        let remainedDistance = max(distance - (unitDistance * CGFloat(index)), 0)
         return CGFloat(min(1, remainedDistance/unitDistance))
     }
 }

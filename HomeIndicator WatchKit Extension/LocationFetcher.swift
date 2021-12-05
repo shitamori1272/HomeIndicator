@@ -12,8 +12,8 @@ import ClockKit
 
 class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, LocationProvider {
     let manager = CLLocationManager()
-    @Published var lastKnownLocation: CLLocation?
-    @Published var lastKnownHeading: CLHeading?
+    var lastKnownLocation: CLLocation?
+    var lastKnownHeading: CLHeading?
     private let locationSubject: PassthroughSubject<Bool, Never> = .init()
 
     static let shared = LocationFetcher()
