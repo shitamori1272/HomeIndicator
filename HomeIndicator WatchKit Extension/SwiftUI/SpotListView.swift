@@ -18,7 +18,7 @@ struct SpotListView: View {
     var body: some View {
         List {
             NewSpotView()
-            ForEach(0..<viewModel.spotDataList.count) { index in
+            ForEach(viewModel.spotDataList.indices, id: \.self) { index in
                 Button(action: {
                     isShowingSheet = true
                     selectedIndex = index
