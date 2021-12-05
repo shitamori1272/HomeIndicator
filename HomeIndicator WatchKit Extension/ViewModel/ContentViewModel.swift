@@ -10,22 +10,17 @@ import Foundation
 
 class ContentViewModel: ObservableObject {
     
-    @Published private var spotIndex: Int = 0 {
-        didSet {
-            spotData = spotRepository.findAll()[spotIndex] ?? SpotData.createDataList()[0]
-        }
-    }
-    @Published var spotData: SpotData = SpotData.createDataList()[0]
+    @Published var spotData: SpotData!
     @Published var locationFetcher = LocationFetcher.shared
     
-    private let spotRepository: SpotRepositoryProtocol
-    private let indexRepository: IndexRepositoryProtocol
+    private let spotRepository: SpotRepository
+    private let indexRepository: IndexRepository
     
-    var spotName: String { spotData.name }
+    var spotName: String { spotData?.name ?? "" }
     
     init(
-        spotRepository: SpotRepositoryProtocol = SpotRepositoryImpl(),
-        indexRepository: IndexRepositoryProtocol = IndexRepository()
+        spotRepository: SpotRepository = SpotRepositoryImpl(),
+        indexRepository: IndexRepository = IndexRepositoryImpl()
     ) {
         self.spotRepository = spotRepository
         self.indexRepository = indexRepository
@@ -33,6 +28,11 @@ class ContentViewModel: ObservableObject {
     
     func onAppear() {
         locationFetcher.start()
+        let index = indexRepository.get()
+        let spotDataList = spotRepository.findAll()
+        if spotDataList.indices.contains(index) {
+            spotData = spotDataList[index]
+        }
     }
     
     var angle: Float {
@@ -44,20 +44,5 @@ class ContentViewModel: ObservableObject {
     var distance: Float {
         guard let lastLocation = locationFetcher.lastKnownLocation else { return 0 }
         return Float(spotData.distance(from: lastLocation))
-    }
-    
-    func setIndex(_ index: Int) {
-        indexRepository.set(index)
-        spotData = spotRepository.findAll()[index]
-    }
-    
-    func loadAll() -> [SpotData] {
-        spotRepository.findAll()
-    }
-    
-    func delete(at index: Int) {
-        let spot = spotRepository.findAll()[index]
-        _ = spotRepository.delete(uuid: spot.id)
-        setIndex(0)
     }
 }

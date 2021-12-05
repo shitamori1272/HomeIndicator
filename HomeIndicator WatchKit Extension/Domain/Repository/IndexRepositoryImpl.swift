@@ -1,5 +1,5 @@
 //
-//  IndexRepository.swift
+//  IndexRepositoryImpl.swift
 //  HomeIndicator WatchKit Extension
 //
 //  Created by 下森周平 on 2021/12/06.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol IndexRepositoryProtocol {
+protocol IndexRepository {
     func get() -> Int
     func set(_ index: Int)
 }
 
-class IndexRepository: IndexRepositoryProtocol {
+class IndexRepositoryImpl: IndexRepository {
     
     private static let key = "index"
     private let userDefaults = UserDefaults.standard

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SpotRepositoryImpl: SpotRepositoryProtocol {
+class SpotRepositoryImpl: SpotRepository {
     
     private static let key = "spotDataList"
     private let userDefaults = UserDefaults.standard

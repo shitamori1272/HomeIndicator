@@ -10,15 +10,15 @@ import Foundation
 
 class SpotListViewModel: ObservableObject {
     
-    private let spotRepository: SpotRepositoryProtocol
+    private let spotRepository: SpotRepository
     
-    private let indexRepository: IndexRepositoryProtocol
+    private let indexRepository: IndexRepository
     
     @Published var spotDataList = [SpotData]()
     
     init(
-        spotRepository: SpotRepositoryProtocol = SpotRepositoryImpl(),
-        indexRepository: IndexRepositoryProtocol = IndexRepository()
+        spotRepository: SpotRepository = SpotRepositoryImpl(),
+        indexRepository: IndexRepository = IndexRepositoryImpl()
     ) {
         self.spotRepository = spotRepository
         self.indexRepository = indexRepository

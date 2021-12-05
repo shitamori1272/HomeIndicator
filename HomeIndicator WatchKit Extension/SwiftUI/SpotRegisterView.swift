@@ -16,12 +16,14 @@ struct SpotRegisterView: View {
     
     @State private var newName: String = ""
     
+    @ObservedObject var viewModel = SpotRegisiterViewModel()
+    
     var body: some View {
         VStack {
             Map(coordinateRegion: $mapRegion)
             TextField("施設名を入力してください", text: $newName)
             Button("この地点を登録する") {
-                SpotRegisiterUsecase().handle(name: newName, coordinates: mapRegion.center)
+                viewModel.registerButtonTapped(name: newName, coordinates: mapRegion.center)
                 presentationMode.wrappedValue.dismiss()
             }
         }

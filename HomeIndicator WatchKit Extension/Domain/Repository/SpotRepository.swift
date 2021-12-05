@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SpotRepositoryProtocol {
+protocol SpotRepository {
     
     func save(_ spot: SpotData)
     

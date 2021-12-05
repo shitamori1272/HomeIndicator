@@ -53,7 +53,12 @@ struct NewSpotView: View {
     var body: some View {
         HStack {
             Text("新しいスポット")
-            NavigationLink(destination: SpotRegisterView(mapRegion: MKCoordinateRegion(center: LocationFetcher.shared.lastKnownLocation!.coordinate, span: .init()))) {
+            NavigationLink(destination:
+                            SpotRegisterView(mapRegion:
+                                                MKCoordinateRegion(
+                                                    center: LocationFetcher.shared.lastKnownLocation!.coordinate,
+                                                    span: .init()))
+            ) {
                 Image("icn_plus")
                     .resizable()
                     .scaledToFit()
