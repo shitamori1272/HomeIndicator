@@ -22,15 +22,19 @@
 		71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E9024D6FC7F00BA6013 /* ComplicationController.swift */; };
 		71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9224D6FC7F00BA6013 /* Assets.xcassets */; };
 		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
-		71691E1B2674B01500338931 /* ExtendedSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1A2674B01500338931 /* ExtendedSessionManager.swift */; };
+		714DB158275D09BA009C4061 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB157275D09BA009C4061 /* ContentViewModel.swift */; };
+		714DB15A275D1B24009C4061 /* SpotListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB159275D1B24009C4061 /* SpotListViewModel.swift */; };
+		714DB15C275D1C38009C4061 /* IndexRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB15B275D1C38009C4061 /* IndexRepository.swift */; };
+		714DB15F275D1F59009C4061 /* SpotRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB15E275D1F59009C4061 /* SpotRepositoryImpl.swift */; };
 		71691E1D2674C53300338931 /* NotificationRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1C2674C53300338931 /* NotificationRegister.swift */; };
 		71691E1F2674C8AB00338931 /* IndicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1E2674C8AB00338931 /* IndicationViewModel.swift */; };
 		71837D0326511F7F005636D8 /* SpotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71837D0226511F7F005636D8 /* SpotData.swift */; };
 		71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71862E26264FEBCC00C8DA54 /* SpotRepository.swift */; };
-		71A443502663D18600A141F7 /* SpoitDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4434F2663D18600A141F7 /* SpoitDataStore.swift */; };
 		71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A443522663D90B00A141F7 /* CLLocation+angle.swift */; };
 		71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A44358266C709C00A141F7 /* SpotRegisterView.swift */; };
 		71A4435B266C717A00A141F7 /* SpotRegisiterUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */; };
+		71CECD23275D25AC0037FE06 /* ComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */; };
+		71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,15 +99,20 @@
 		71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		714DB157275D09BA009C4061 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		714DB159275D1B24009C4061 /* SpotListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewModel.swift; sourceTree = "<group>"; };
+		714DB15B275D1C38009C4061 /* IndexRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexRepository.swift; sourceTree = "<group>"; };
+		714DB15E275D1F59009C4061 /* SpotRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepositoryImpl.swift; sourceTree = "<group>"; };
 		71691E1A2674B01500338931 /* ExtendedSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedSessionManager.swift; sourceTree = "<group>"; };
 		71691E1C2674C53300338931 /* NotificationRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRegister.swift; sourceTree = "<group>"; };
 		71691E1E2674C8AB00338931 /* IndicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicationViewModel.swift; sourceTree = "<group>"; };
 		71837D0226511F7F005636D8 /* SpotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotData.swift; sourceTree = "<group>"; };
 		71862E26264FEBCC00C8DA54 /* SpotRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepository.swift; sourceTree = "<group>"; };
-		71A4434F2663D18600A141F7 /* SpoitDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoitDataStore.swift; sourceTree = "<group>"; };
 		71A443522663D90B00A141F7 /* CLLocation+angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+angle.swift"; sourceTree = "<group>"; };
 		71A44358266C709C00A141F7 /* SpotRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisterView.swift; sourceTree = "<group>"; };
 		71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisiterUsecase.swift; sourceTree = "<group>"; };
+		71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
+		71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDeleteUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +160,9 @@
 			children = (
 				71A44357266C6C6D00A141F7 /* SwiftUI */,
 				7156A5792704BF6500583DDC /* Usecase */,
+				714DB156275D0976009C4061 /* ViewModel */,
 				71A44355266C6C4E00A141F7 /* Domain */,
+				714DB15D275D1F0D009C4061 /* Infra */,
 				71A443512663D8E800A141F7 /* Extension */,
 				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
 				71220E8824D6FC7F00BA6013 /* HostingController.swift */,
@@ -177,10 +188,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		714DB156275D0976009C4061 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				714DB157275D09BA009C4061 /* ContentViewModel.swift */,
+				714DB159275D1B24009C4061 /* SpotListViewModel.swift */,
+				71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		714DB15D275D1F0D009C4061 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				714DB15E275D1F59009C4061 /* SpotRepositoryImpl.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
 		7156A5792704BF6500583DDC /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -188,7 +216,6 @@
 		7156A57C2704BFDF00583DDC /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				71A4434F2663D18600A141F7 /* SpoitDataStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -205,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				71862E26264FEBCC00C8DA54 /* SpotRepository.swift */,
+				714DB15B275D1C38009C4061 /* IndexRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -213,8 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				7156A57C2704BFDF00583DDC /* DataStore */,
-				71A44354266C6C1D00A141F7 /* Repository */,
 				71A44356266C6C5D00A141F7 /* Entity */,
+				71F404DA275B5F25006D42BD /* Usecase */,
+				71A44354266C6C1D00A141F7 /* Repository */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -237,6 +266,15 @@
 				71A44358266C709C00A141F7 /* SpotRegisterView.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		71F404DA275B5F25006D42BD /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				71A4435A266C717A00A141F7 /* SpotRegisiterUsecase.swift */,
+				71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */,
+			);
+			path = Usecase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,18 +406,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				71691E1F2674C8AB00338931 /* IndicationViewModel.swift in Sources */,
+				714DB15A275D1B24009C4061 /* SpotListViewModel.swift in Sources */,
 				710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */,
-				71A443502663D18600A141F7 /* SpoitDataStore.swift in Sources */,
+				714DB15F275D1F59009C4061 /* SpotRepositoryImpl.swift in Sources */,
 				71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */,
+				714DB158275D09BA009C4061 /* ContentViewModel.swift in Sources */,
 				710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */,
 				71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */,
 				71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */,
 				710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */,
-				71691E1B2674B01500338931 /* ExtendedSessionManager.swift in Sources */,
 				71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */,
+				714DB15C275D1C38009C4061 /* IndexRepository.swift in Sources */,
 				71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */,
 				71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */,
 				71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */,
+				71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */,
+				71CECD23275D25AC0037FE06 /* ComplicationViewModel.swift in Sources */,
 				71A4435B266C717A00A141F7 /* SpotRegisiterUsecase.swift in Sources */,
 				71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */,
 				71837D0326511F7F005636D8 /* SpotData.swift in Sources */,
@@ -472,6 +514,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Debug;
 		};
@@ -525,6 +568,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

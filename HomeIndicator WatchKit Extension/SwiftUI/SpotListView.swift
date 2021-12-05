@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct SpotListView: View {
-    @ObservedObject var spotDataStore: SpotDataStore
+    
+    @ObservedObject var viewModel: SpotListViewModel = SpotListViewModel()
     
     @State var isShowingSheet = false
     @State var selectedIndex: Int?
@@ -17,14 +18,17 @@ struct SpotListView: View {
     var body: some View {
         List {
             NewSpotView()
-            ForEach(0..<spotDataStore.loadAll().count) { index in
+            ForEach(0..<viewModel.spotDataList.count) { index in
                 Button(action: {
                     isShowingSheet = true
                     selectedIndex = index
                 }, label: {
-                    SpotDataView(spotData: spotDataStore.loadAll()[index])
+                    SpotDataView(spotData: viewModel.spotDataList[index])
                 })
             }
+        }
+        .onAppear {
+            viewModel.onAppear()
         }
 //        .onDelete { index in
 //            spotDataStore.delete(at: index)
@@ -34,7 +38,10 @@ struct SpotListView: View {
                         message: Text("このスポットを目的地に設定しますか？"),
                         buttons: [
                             .default(Text("はい"), action: {
-                                spotDataStore.setIndex(selectedIndex ?? 0)
+                                guard let selectedIndex = selectedIndex else {
+                                    return
+                                }
+                                viewModel.onSelected(at: selectedIndex)
                             })
                         ]
             )
@@ -70,6 +77,6 @@ struct SpotDataView: View {
 
 struct SpotListView_Previews: PreviewProvider {
     static var previews: some View {
-        SpotListView(spotDataStore: SpotDataStore())
+        SpotListView()
     }
 }

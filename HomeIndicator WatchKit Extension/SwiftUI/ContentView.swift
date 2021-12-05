@@ -8,26 +8,25 @@
 
 import SwiftUI
 import ClockKit
-import UserNotifications
 
 struct ContentView: View {
-
-    @ObservedObject var dataStore: SpotDataStore = SpotDataStore()
+    
+    @ObservedObject var viewModel = ContentViewModel()
     
     var body: some View {
         ScrollView {
             VStack {
-                Text(dataStore.spotData?.name ?? "")
-                IndicatorView(angle: dataStore.angle, distance: dataStore.distance)
+                Text(viewModel.spotName)
+                IndicatorView(angle: viewModel.angle, distance: 0)
                     .frame(width: 100, height: 100, alignment: .center)
-                Text("目的地まで\(String(format: "%.2f",dataStore.distance))m")
-                Text("\(String(format: "%.2f", dataStore.angle))度")
-                NavigationLink(destination: SpotListView(spotDataStore: dataStore)) {
-                    Text("登録スポット一覧")
+                Text("目的地まで\(String(format: "%.2f", viewModel.distance))m")
+                Text("\(String(format: "%.2f", viewModel.angle))度")
+                NavigationLink(destination: SpotListView()) {
+                    Text("スポット一覧")
                 }
             }
         }.onAppear {
-            dataStore.locationFetcher.start()
+            viewModel.onAppear()
         }
     }
 }
