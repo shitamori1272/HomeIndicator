@@ -32,15 +32,19 @@ class ContentViewModel: ObservableObject {
         self.spotRepository = spotRepository
         self.indexRepository = indexRepository
         
+        updateAngleAndDistance()
+        
         locationFetcher.locationPublisher().sink { [weak self] _ in
-            guard let self = self,
-                  let lastLocation = self.locationFetcher.lastKnownLocation,
-                  let lastHeading = self.locationFetcher.lastKnownHeading else {
-                      return
-                  }
-            self.angle = CGFloat(lastLocation.angle(target: self.spotData.location) - Float(lastHeading.magneticHeading))
-            self.distance = self.spotData.distance(from: lastLocation)
+            guard let self = self else { return }
+            self.updateAngleAndDistance()
         }.store(in: &cancellables)
+    }
+    
+    func updateAngleAndDistance() {
+        guard let lastLocation = locationFetcher.lastKnownLocation,
+              let lastHeading = locationFetcher.lastKnownHeading else { return }
+        angle = CGFloat(lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading))
+        distance = spotData.distance(from: lastLocation)
     }
     
     func onAppear() {

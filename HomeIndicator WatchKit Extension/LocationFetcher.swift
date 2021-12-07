@@ -14,6 +14,9 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     let manager = CLLocationManager()
     var lastKnownLocation: CLLocation?
     var lastKnownHeading: CLHeading?
+    
+    private var isStarted = false
+    
     private let locationSubject: PassthroughSubject<Bool, Never> = .init()
 
     static let shared = LocationFetcher()
@@ -31,9 +34,11 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     }
     
     func start() {
+        guard !isStarted else { return }
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         manager.startUpdatingHeading()
+        isStarted = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
