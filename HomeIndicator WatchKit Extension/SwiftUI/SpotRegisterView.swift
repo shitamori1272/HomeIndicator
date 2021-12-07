@@ -20,17 +20,35 @@ struct SpotRegisterView: View {
     
     var body: some View {
         VStack {
-            Map(coordinateRegion: $mapRegion)
+            ZStack {
+                Map(coordinateRegion: $mapRegion)
+                Plus()
+                    .stroke(lineWidth: 3)
+                    .frame(width: 20, height: 20, alignment: .center)
+            }
             TextField("施設名を入力してください", text: $newName)
             Button("この地点を登録する") {
                 viewModel.registerButtonTapped(name: newName, coordinates: mapRegion.center)
                 presentationMode.wrappedValue.dismiss()
-            }
+            }.disabled(newName.isEmpty)
         }
         .onAppear {
         }
     }
 }
+
+private struct Plus: Shape {
+    
+    func path(in rect: CGRect) -> Path {
+        Path { path in
+            path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+            path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+            path.move(to: CGPoint(x: rect.minX, y: rect.midY))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+        }
+    }
+}
+
 
 struct SpotRegisterView_Previews: PreviewProvider {
     static var previews: some View {
