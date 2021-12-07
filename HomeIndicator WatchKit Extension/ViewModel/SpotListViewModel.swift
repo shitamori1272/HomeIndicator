@@ -28,6 +28,15 @@ class SpotListViewModel: ObservableObject {
         spotDataList = spotRepository.findAll()
     }
     
+    func onDeleted(at index: Int) {
+        let uuid = spotDataList[index].id
+        _ = spotRepository.delete(uuid: uuid)
+        spotDataList = spotRepository.findAll()
+        if index == indexRepository.get() {
+            indexRepository.set(0)
+        }
+    }
+    
     func onSelected(at index: Int) {
         indexRepository.set(index)
     }

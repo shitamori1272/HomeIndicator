@@ -25,14 +25,14 @@ struct SpotListView: View {
                 }, label: {
                     SpotDataView(spotData: viewModel.spotDataList[index])
                 })
+            }.onDelete { indexSet in
+                guard let index = indexSet.first else { return }
+                viewModel.onDeleted(at: index)
             }
         }
         .onAppear {
             viewModel.onAppear()
         }
-//        .onDelete { index in
-//            spotDataStore.delete(at: index)
-//        }
         .actionSheet(isPresented: $isShowingSheet) {
             ActionSheet(title: Text("スポット変更"),
                         message: Text("このスポットを目的地に設定しますか？"),
