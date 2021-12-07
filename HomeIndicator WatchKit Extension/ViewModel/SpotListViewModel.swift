@@ -14,7 +14,7 @@ class SpotListViewModel: ObservableObject {
     
     private let indexRepository: IndexRepository
     
-    @Published var spotDataList = [SpotData]()
+    @Published var spotDataList: [SpotData]
     
     init(
         spotRepository: SpotRepository = SpotRepositoryImpl(),
@@ -22,6 +22,7 @@ class SpotListViewModel: ObservableObject {
     ) {
         self.spotRepository = spotRepository
         self.indexRepository = indexRepository
+        self.spotDataList = spotRepository.findAll()
     }
     
     func onAppear() {
