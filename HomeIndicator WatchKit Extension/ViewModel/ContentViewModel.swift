@@ -10,7 +10,18 @@ import Foundation
 import CoreGraphics
 import Combine
 
-class ContentViewModel: ObservableObject {
+protocol ContentViewModelProtocol: ObservableObject {
+    
+    var angle: CGFloat { get set }
+    
+    var distance: CGFloat { get set }
+    
+    var spotName: String { get }
+    
+    func onAppear()
+}
+
+class ContentViewModel: ContentViewModelProtocol {
     
     @Published var spotData: SpotData = SpotData.createDataList()[0]
     let locationFetcher = LocationFetcher.shared
@@ -55,4 +66,14 @@ class ContentViewModel: ObservableObject {
             spotData = spotDataList[index]
         }
     }
+}
+
+class ContentViewModelMock: ContentViewModelProtocol {
+    @Published var angle: CGFloat = 25
+    
+    @Published var distance: CGFloat = 1200
+    
+    @Published var spotName: String = "Home"
+    
+    func onAppear() {}
 }

@@ -9,9 +9,9 @@
 import SwiftUI
 import ClockKit
 
-struct ContentView: View {
+struct ContentView<ViewModel>: View where ViewModel: ContentViewModelProtocol  {
     
-    @ObservedObject var viewModel = ContentViewModel()
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         ScrollView {
@@ -35,6 +35,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView<ContentViewModelMock>(viewModel: ContentViewModelMock())
     }
 }
