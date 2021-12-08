@@ -18,15 +18,17 @@ struct ContentView: View {
             VStack {
                 Text(viewModel.spotName)
                 IndicatorView(angle: viewModel.angle, distance: viewModel.distance)
-                    .frame(width: 100, height: 100, alignment: .center)
+                    .frame(width: 120, height: 120, alignment: .center)
                 Text("目的地まで\(String(format: "%.2f", viewModel.distance))m")
-                Text("\(String(format: "%.2f", viewModel.angle))度")
+            }
+        }.onAppear {
+            viewModel.onAppear()
+        }.toolbar {
+            ToolbarItem(placement: .primaryAction){
                 NavigationLink(destination: SpotListView()) {
                     Text("スポット一覧")
                 }
             }
-        }.onAppear {
-            viewModel.onAppear()
         }
     }
 }

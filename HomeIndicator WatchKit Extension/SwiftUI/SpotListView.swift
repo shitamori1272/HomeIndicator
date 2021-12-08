@@ -17,7 +17,6 @@ struct SpotListView: View {
     
     var body: some View {
         List {
-            NewSpotView()
             ForEach(viewModel.spotDataList.indices, id: \.self) { index in
                 Button(action: {
                     isShowingSheet = true
@@ -32,6 +31,12 @@ struct SpotListView: View {
         }
         .onAppear {
             viewModel.onAppear()
+        }.toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                NavigationLink(destination: SpotRegisterView()) {
+                    Text("スポット追加")
+                }
+            }
         }
         .actionSheet(isPresented: $isShowingSheet) {
             ActionSheet(title: Text("スポット変更"),
@@ -54,11 +59,7 @@ struct NewSpotView: View {
         HStack {
             Text("新しいスポット")
             NavigationLink(destination:
-                            SpotRegisterView(mapRegion:
-                                                MKCoordinateRegion(
-                                                    center: LocationFetcher.shared.lastKnownLocation!.coordinate,
-                                                    span: .init()))
-            ) {
+                            SpotRegisterView()) {
                 Image("icn_plus")
                     .resizable()
                     .scaledToFit()
@@ -72,7 +73,7 @@ struct NewSpotView: View {
 struct SpotDataView: View {
     
     var spotData: SpotData
-
+    
     var body: some View {
         HStack {
             Text(spotData.name)

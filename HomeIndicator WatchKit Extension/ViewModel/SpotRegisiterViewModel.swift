@@ -7,8 +7,11 @@
 //
 
 import CoreLocation
+import MapKit
 
 class SpotRegisiterViewModel: ObservableObject {
+    
+    @Published var mapRegion = MKCoordinateRegion(center: LocationFetcher.shared.lastKnownLocation!.coordinate, span: .init())
     
     private let spotRepository: SpotRepository
     

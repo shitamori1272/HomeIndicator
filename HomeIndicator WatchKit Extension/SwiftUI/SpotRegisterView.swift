@@ -12,8 +12,6 @@ import MapKit
 struct SpotRegisterView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
-    @State var mapRegion: MKCoordinateRegion
-    
     @State private var newName: String = ""
     
     @ObservedObject var viewModel = SpotRegisiterViewModel()
@@ -21,14 +19,14 @@ struct SpotRegisterView: View {
     var body: some View {
         VStack {
             ZStack {
-                Map(coordinateRegion: $mapRegion)
+                Map(coordinateRegion: $viewModel.mapRegion)
                 Plus()
                     .stroke(lineWidth: 3)
                     .frame(width: 20, height: 20, alignment: .center)
             }
             TextField("施設名を入力してください", text: $newName)
             Button("この地点を登録する") {
-                viewModel.registerButtonTapped(name: newName, coordinates: mapRegion.center)
+                viewModel.registerButtonTapped(name: newName, coordinates: viewModel.mapRegion.center)
                 presentationMode.wrappedValue.dismiss()
             }.disabled(newName.isEmpty)
         }
@@ -52,7 +50,6 @@ private struct Plus: Shape {
 
 struct SpotRegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        let mapRegion = MKCoordinateRegion(center: .init(), span: .init())
-        SpotRegisterView(mapRegion: mapRegion)
+        SpotRegisterView()
     }
 }
