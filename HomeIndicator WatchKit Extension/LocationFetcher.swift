@@ -27,6 +27,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
         super.init()
         manager.delegate = self
         manager.allowsBackgroundLocationUpdates = true
+        start()
     }
     
     func locationPublisher() -> AnyPublisher<Bool, Never> {
@@ -34,11 +35,9 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     }
     
     func start() {
-        guard !isStarted else { return }
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         manager.startUpdatingHeading()
-        isStarted = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

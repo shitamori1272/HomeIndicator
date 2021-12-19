@@ -18,23 +18,24 @@ protocol ContentViewModelProtocol: ObservableObject {
     
     var spotName: String { get }
     
+    var shouldShowRegisterButton: Bool { get }
+    
     func onAppear()
 }
 
 class ContentViewModel: ContentViewModelProtocol {
     
-    @Published var spotData: SpotData = SpotData.createDataList()[0]
     let locationFetcher = LocationFetcher.shared
     
     @Published var angle: CGFloat = 0
     @Published var distance: CGFloat = 0
+    var shouldShowRegisterButton: Bool { spotData == nil }
+    var spotName: String { spotData?.name ?? "スポット未設定" }
+    var cancellables = Set<AnyCancellable>()
     
+    @Published var spotData: SpotData?
     private let spotRepository: SpotRepository
     private let indexRepository: IndexRepository
-    
-    var spotName: String { spotData.name }
-    
-    var cancellables = Set<AnyCancellable>()
     
     init(
         spotRepository: SpotRepository = SpotRepositoryImpl(),
@@ -53,27 +54,17 @@ class ContentViewModel: ContentViewModelProtocol {
     
     func updateAngleAndDistance() {
         guard let lastLocation = locationFetcher.lastKnownLocation,
-              let lastHeading = locationFetcher.lastKnownHeading else { return }
+              let lastHeading = locationFetcher.lastKnownHeading,
+              let spotData = spotData else { return }
         angle = CGFloat(lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading))
         distance = spotData.distance(from: lastLocation)
     }
     
     func onAppear() {
-        locationFetcher.start()
         let index = indexRepository.get()
         let spotDataList = spotRepository.findAll()
         if spotDataList.indices.contains(index) {
             spotData = spotDataList[index]
         }
     }
-}
-
-class ContentViewModelMock: ContentViewModelProtocol {
-    @Published var angle: CGFloat = 25
-    
-    @Published var distance: CGFloat = 1200
-    
-    @Published var spotName: String = "Home"
-    
-    func onAppear() {}
 }

@@ -12,7 +12,7 @@ import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    // MARK: - Timeline Configuration
+    @ObservedObject var viewModel = ContentViewModel()
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
         handler([.forward, .backward])
@@ -60,9 +60,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
-        @ObservedObject var viewModel = ContentViewModel()
         viewModel.onAppear()
-        return CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: viewModel.angle, distance: viewModel.distance))
+        viewModel.updateAngleAndDistance()
+        return CLKComplicationTemplateGraphicCircularView(IndicatorView(angle: viewModel.angle, distance: viewModel.distance).frame(width: 20, height: 20, alignment: .center))
     }
 }
 

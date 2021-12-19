@@ -14,7 +14,7 @@ struct SpotRegisterView: View {
 
     @State private var newName: String = ""
     
-    @ObservedObject var viewModel = SpotRegisiterViewModel()
+    @ObservedObject var viewModel: SpotRegisiterViewModel
     
     var body: some View {
         VStack {
@@ -24,7 +24,7 @@ struct SpotRegisterView: View {
                     .stroke(lineWidth: 3)
                     .frame(width: 20, height: 20, alignment: .center)
             }
-            TextField("施設名を入力してください", text: $newName)
+            TextField("登録名の入力", text: $newName)
             Button("この地点を登録する") {
                 viewModel.registerButtonTapped(name: newName, coordinates: viewModel.mapRegion.center)
                 presentationMode.wrappedValue.dismiss()
@@ -50,6 +50,6 @@ private struct Plus: Shape {
 
 struct SpotRegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        SpotRegisterView()
+        SpotRegisterView(viewModel: SpotRegisiterViewModel())
     }
 }

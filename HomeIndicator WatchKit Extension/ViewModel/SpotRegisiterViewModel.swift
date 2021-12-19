@@ -11,12 +11,14 @@ import MapKit
 
 class SpotRegisiterViewModel: ObservableObject {
     
-    @Published var mapRegion = MKCoordinateRegion(center: LocationFetcher.shared.lastKnownLocation!.coordinate, span: .init())
+    @Published var mapRegion: MKCoordinateRegion
     
     private let spotRepository: SpotRepository
     
     init(spotRepositroy: SpotRepository = SpotRepositoryImpl()) {
         self.spotRepository = spotRepositroy
+        let coordinate = LocationFetcher.shared.lastKnownLocation?.coordinate ?? CLLocationCoordinate2D()
+        mapRegion = MKCoordinateRegion(center: coordinate, span: .init())
     }
     
     func registerButtonTapped(name: String, coordinates: CLLocationCoordinate2D) {

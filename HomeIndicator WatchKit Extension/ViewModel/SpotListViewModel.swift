@@ -30,6 +30,7 @@ class SpotListViewModel: ObservableObject {
     }
     
     func onDeleted(at index: Int) {
+        guard spotDataList.indices.contains(index) else { return }
         let uuid = spotDataList[index].id
         _ = spotRepository.delete(uuid: uuid)
         spotDataList = spotRepository.findAll()

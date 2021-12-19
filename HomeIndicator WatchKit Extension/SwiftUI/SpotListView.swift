@@ -33,7 +33,7 @@ struct SpotListView: View {
             viewModel.onAppear()
         }.toolbar {
             ToolbarItem(placement: .primaryAction) {
-                NavigationLink(destination: SpotRegisterView()) {
+                NavigationLink(destination: SpotRegisterView(viewModel: SpotRegisiterViewModel())) {
                     Text("スポット追加")
                 }
             }
@@ -47,28 +47,13 @@ struct SpotListView: View {
                                     return
                                 }
                                 viewModel.onSelected(at: selectedIndex)
+                                self.selectedIndex = nil
                             })
                         ]
             )
         }
     }
 }
-
-struct NewSpotView: View {
-    var body: some View {
-        HStack {
-            Text("新しいスポット")
-            NavigationLink(destination:
-                            SpotRegisterView()) {
-                Image("icn_plus")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40, height: 40, alignment: .center)
-            }
-        }
-    }
-}
-
 
 struct SpotDataView: View {
     
