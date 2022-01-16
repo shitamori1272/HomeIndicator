@@ -65,6 +65,7 @@ platform :ios do
     build_app(
       project: "HomeIndicator.xcodeproj",
       scheme: "HomeIndicator WatchKit App",
+      destination: "generic/platform=watchOS",
       export_options: {
         method: "app-store",
       }
