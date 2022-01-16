@@ -51,9 +51,9 @@ platform :ios do
   
     # 4. fastlane matchを使って証明書をインストール
     match(
-      git_basic_authorization:basic_authorization_token,
+      git_basic_authorization: basic_authorization_token,
       api_key: api_key,
-      app_identifier: 'com.example.myapp',
+      app_identifier: 'com.Shitamori.HomeIndicator',
       type: "appstore",
       readonly: is_ci
     )
