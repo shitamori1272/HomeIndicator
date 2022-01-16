@@ -37,14 +37,14 @@ platform :ios do
   
     # 2. AppStoreConenct APIの準備
     api_key = app_store_connect_api_key(
-      key_id: ENV['ASC_KEY_ID'],
-      issuer_id: ENV['ASC_ISSUER_ID'],
-      key_content: ENV['ASC_KEY_CONTENT'],
+      key_id: ENV["ASC_KEY_ID"],
+      issuer_id: ENV["ASC_ISSUER_ID"],
+      key_content: ENV["ASC_KEY_CONTENT"],
       in_house: false
     )
   
     # 3. GitHubアクセスの準備
-    username = ENV['USERNAME']
+    username = ENV["USERNAME"]
     personal_github_access_token = ENV["PERSONAL_GITHUB_ACCESS_TOKEN"]
     authorization_token_str = "#{username}:#{personal_github_access_token}"
     basic_authorization_token = Base64.strict_encode64(authorization_token_str)
@@ -53,7 +53,11 @@ platform :ios do
     match(
       git_basic_authorization: basic_authorization_token,
       api_key: api_key,
-      app_identifier: 'com.Shitamori.HomeIndicator',
+      app_identifier: [
+        "com.Shitamori.HomeIndicator",
+        "com.Shitamori.HomeIndicator.watchkitapp",
+        "com.Shitamori.HomeIndicator.watchkitapp.watchkitextension"
+      ],
       type: "appstore",
       readonly: is_ci
     )
