@@ -27,4 +27,4 @@ jobs:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         PERSONAL_GITHUB_ACCESS_TOKEN: ${{ secrets.PERSONAL_GITHUB_ACCESS_TOKEN }}
         USERNAME: ${{ secrets.USERNAME }}
-      run: bundle exec fastlane beta-ci
+      run: bundle exec fastlane beta_ci
