@@ -27,5 +27,7 @@
 	</array>
 	<key>WKWatchKitApp</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>目的地までの距離・方向を算出するために位置情報を利用します。</string>
 </dict>
 </plist>
