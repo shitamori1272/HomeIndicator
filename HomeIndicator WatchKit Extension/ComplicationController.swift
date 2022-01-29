@@ -34,7 +34,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        handler(CLKComplicationTemplateGraphicCircularView(IndicatorView(angle: viewModel.angle, distance: viewModel.distance).frame(width: 20, height: 20, alignment: .center)))
     }
     
     func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
