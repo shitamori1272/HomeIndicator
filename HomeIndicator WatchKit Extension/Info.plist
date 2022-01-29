@@ -55,9 +55,7 @@
 		<string>location</string>
 	</array>
 	<key>WKBackgroundModes</key>
-	<array>
-		<string>physical-therapy</string>
-	</array>
+	<array/>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>

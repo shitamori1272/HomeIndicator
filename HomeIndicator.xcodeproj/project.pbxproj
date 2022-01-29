@@ -33,6 +33,7 @@
 		71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A443522663D90B00A141F7 /* CLLocation+angle.swift */; };
 		71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A44358266C709C00A141F7 /* SpotRegisterView.swift */; };
 		71A4435B266C717A00A141F7 /* SpotRegisiterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */; };
+		71CE27E827A5A913009C0AFC /* usage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CE27E727A5A913009C0AFC /* usage.plist */; };
 		71CECD23275D25AC0037FE06 /* ComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */; };
 		71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		71A443522663D90B00A141F7 /* CLLocation+angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+angle.swift"; sourceTree = "<group>"; };
 		71A44358266C709C00A141F7 /* SpotRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisterView.swift; sourceTree = "<group>"; };
 		71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisiterViewModel.swift; sourceTree = "<group>"; };
+		71CE27E727A5A913009C0AFC /* usage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = usage.plist; sourceTree = "<group>"; };
 		71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
 		71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDeleteUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 				71220E7724D6FC7700BA6013 /* Interface.storyboard */,
 				71220E7A24D6FC7E00BA6013 /* Assets.xcassets */,
 				71220E7C24D6FC7E00BA6013 /* Info.plist */,
+				71CE27E727A5A913009C0AFC /* usage.plist */,
 			);
 			path = "HomeIndicator WatchKit App";
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			files = (
 				71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */,
 				71220E7924D6FC7700BA6013 /* Interface.storyboard in Resources */,
+				71CE27E827A5A913009C0AFC /* usage.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
