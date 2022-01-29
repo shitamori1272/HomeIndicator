@@ -662,14 +662,14 @@
 		71220EA424D6FC8000BA6013 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Shitamori.HomeIndicator";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.Shitamori.HomeIndicator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
