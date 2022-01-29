@@ -33,7 +33,7 @@ struct SpotListView: View {
             viewModel.onAppear()
         }.toolbar {
             ToolbarItem(placement: .primaryAction) {
-                NavigationLink(destination: SpotRegisterView(viewModel: SpotRegisiterViewModel())) {
+                NavigationLink(destination: SpotRegisterView()) {
                     Text("スポット追加")
                 }
             }

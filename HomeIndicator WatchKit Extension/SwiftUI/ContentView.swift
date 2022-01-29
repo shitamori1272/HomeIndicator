@@ -17,7 +17,7 @@ struct ContentView<ViewModel>: View where ViewModel: ContentViewModelProtocol  {
         ScrollView {
             VStack {
                 if viewModel.shouldShowRegisterButton {
-                    NavigationLink(destination: SpotRegisterView(viewModel: SpotRegisiterViewModel())) {
+                    NavigationLink(destination: SpotRegisterView()) {
                         Text("最初のスポットを登録")
                     }
                 } else {

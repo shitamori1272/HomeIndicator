@@ -14,12 +14,15 @@ struct SpotRegisterView: View {
 
     @State private var newName: String = ""
     
-    @ObservedObject var viewModel: SpotRegisiterViewModel
+    @ObservedObject var viewModel: SpotRegisiterViewModel = SpotRegisiterViewModel()
     
     var body: some View {
         VStack {
             ZStack {
-                Map(coordinateRegion: $viewModel.mapRegion)
+                Map(
+                    coordinateRegion: $viewModel.mapRegion,
+                    showsUserLocation: true
+                )
                 Plus()
                     .stroke(lineWidth: 3)
                     .frame(width: 20, height: 20, alignment: .center)
@@ -50,6 +53,6 @@ private struct Plus: Shape {
 
 struct SpotRegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        SpotRegisterView(viewModel: SpotRegisiterViewModel())
+        SpotRegisterView()
     }
 }
