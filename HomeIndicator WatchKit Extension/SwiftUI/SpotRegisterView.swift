@@ -14,7 +14,7 @@ struct SpotRegisterView: View {
 
     @State private var newName: String = ""
     
-    @ObservedObject var viewModel: SpotRegisiterViewModel = SpotRegisiterViewModel()
+    @StateObject var viewModel: SpotRegisiterViewModel = SpotRegisiterViewModel()
     
     var body: some View {
         VStack {
