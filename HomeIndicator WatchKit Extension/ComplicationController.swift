@@ -14,6 +14,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     @ObservedObject var viewModel = ContentViewModel()
     
+    func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
+        let descriptors = [
+            CLKComplicationDescriptor(
+                identifier: "HomeIndicator",
+                displayName: "HomeIndicator",
+                supportedFamilies: [
+                    .graphicCircular
+                ]
+            )
+        ]
+        handler(descriptors)
+    }
+    
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
         handler(.showOnLockScreen)
     }
@@ -40,12 +53,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
         viewModel.onAppear()
         viewModel.updateAngleAndDistance()
-        return CLKComplicationTemplateGraphicCircularView(IndicatorView(angle: viewModel.angle, distance: viewModel.distance).frame(width: 20, height: 20, alignment: .center))
+        return CLKComplicationTemplateGraphicCircularView(
+            IndicatorView(angle: viewModel.angle, distance: viewModel.distance)
+        )
     }
 }
 
 struct ComplicationController_Previews: PreviewProvider {
     static var previews: some View {
-        CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: 0, distance: 0)).previewContext()
+        CLKComplicationTemplateGraphicCircularView(
+            IndicatorView(angle: 0, distance: 1000)
+        ).previewContext()
     }
 }
