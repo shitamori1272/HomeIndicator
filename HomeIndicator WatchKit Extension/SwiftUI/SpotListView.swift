@@ -17,6 +17,9 @@ struct SpotListView: View {
     
     var body: some View {
         List {
+            NavigationLink(destination: SpotRegisterView()) {
+                Text("スポット追加")
+            }
             ForEach(viewModel.spotDataList.indices, id: \.self) { index in
                 Button(action: {
                     isShowingSheet = true

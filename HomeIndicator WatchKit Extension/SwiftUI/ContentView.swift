@@ -25,6 +25,9 @@ struct ContentView<ViewModel>: View where ViewModel: ContentViewModelProtocol  {
                     IndicatorView(angle: viewModel.angle, distance: viewModel.distance)
                         .frame(width: 120, height: 120, alignment: .center)
                     Text("目的地まで\(String(format: "%.2f", viewModel.distance))m")
+                    NavigationLink(destination: SpotListView()) {
+                        Text("スポット一覧")
+                    }
                 }
             }
         }.onAppear {
