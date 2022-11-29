@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  HomeIndicator
+
+  Created by Shuhei Shitamori on 2022/11/29.
+  Copyright © 2022 Shitamori. All rights reserved.
+*/
+
+"スポット一覧" = "Spot List";
+"スポット変更" = "Change Spot";
+"スポット追加" = "Add New Spot";
+"このスポットを目的地に設定しますか？" = "Will you set this Spot?";
+"最初のスポットを登録" = "Register Spot";
+"この地点を登録する" = "Register";
+"はい" = "Yes";
+"いいえ" = "No";
+"登録名の入力" = "Input Name";
+"目的地まで%@m" = "%@m to Spot";
