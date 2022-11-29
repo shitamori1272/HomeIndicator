@@ -22,6 +22,7 @@
 		71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E9024D6FC7F00BA6013 /* ComplicationController.swift */; };
 		71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9224D6FC7F00BA6013 /* Assets.xcassets */; };
 		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
+		714290A02936A46400F457CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714290A22936A46400F457CA /* Localizable.strings */; };
 		714DB158275D09BA009C4061 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB157275D09BA009C4061 /* ContentViewModel.swift */; };
 		714DB15A275D1B24009C4061 /* SpotListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB159275D1B24009C4061 /* SpotListViewModel.swift */; };
 		714DB15C275D1C38009C4061 /* IndexRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB15B275D1C38009C4061 /* IndexRepositoryImpl.swift */; };
@@ -100,6 +101,7 @@
 		71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		714290A12936A46400F457CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		714DB157275D09BA009C4061 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		714DB159275D1B24009C4061 /* SpotListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewModel.swift; sourceTree = "<group>"; };
 		714DB15B275D1C38009C4061 /* IndexRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */,
 				71220E8C24D6FC7F00BA6013 /* NotificationController.swift */,
 				71220E9024D6FC7F00BA6013 /* ComplicationController.swift */,
+				714290A22936A46400F457CA /* Localizable.strings */,
 				71220E9224D6FC7F00BA6013 /* Assets.xcassets */,
 				71220E9724D6FC7F00BA6013 /* Info.plist */,
 				71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */,
@@ -390,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */,
+				714290A02936A46400F457CA /* Localizable.strings in Resources */,
 				71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +452,14 @@
 				71220E7824D6FC7700BA6013 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		714290A22936A46400F457CA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				714290A12936A46400F457CA /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
