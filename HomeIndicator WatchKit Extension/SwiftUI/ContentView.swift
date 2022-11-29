@@ -32,12 +32,6 @@ struct ContentView<ViewModel>: View where ViewModel: ContentViewModelProtocol  {
             }
         }.onAppear {
             viewModel.onAppear()
-        }.toolbar {
-            ToolbarItem(placement: .primaryAction){
-                NavigationLink(destination: SpotListView()) {
-                    Text("スポット一覧")
-                }
-            }
         }
     }
 }
