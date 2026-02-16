@@ -37,6 +37,7 @@
 		71CE27E827A5A913009C0AFC /* usage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CE27E727A5A913009C0AFC /* usage.plist */; };
 		71CECD23275D25AC0037FE06 /* ComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */; };
 		71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */; };
+		CA39AD0CF9D03A7FF7A67F86 /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D79554727E1FE39B513DCE /* SmokeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,13 @@
 			remoteInfo = "HomeIndicator WatchKit App";
 		};
 		71220E8324D6FC7F00BA6013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71220E6824D6FC7700BA6013 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71220E8024D6FC7F00BA6013;
+			remoteInfo = "HomeIndicator WatchKit Extension";
+		};
+		FAEEC6E36E52552B6D852609 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 71220E6824D6FC7700BA6013 /* Project object */;
 			proxyType = 1;
@@ -117,10 +125,19 @@
 		71CE27E727A5A913009C0AFC /* usage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = usage.plist; sourceTree = "<group>"; };
 		71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
 		71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDeleteUsecase.swift; sourceTree = "<group>"; };
+		79D79554727E1FE39B513DCE /* SmokeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HomeIndicator WatchKit ExtensionTests/SmokeTests.swift"; sourceTree = "<group>"; };
+		872FFC9983629B2E80950A84 /* HomeIndicator WatchKit ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeIndicator WatchKit ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		71220E7E24D6FC7F00BA6013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAADC0559B564250A954F8F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,6 +153,7 @@
 				71220E7624D6FC7700BA6013 /* HomeIndicator WatchKit App */,
 				71220E8524D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */,
 				71220E6F24D6FC7700BA6013 /* Products */,
+				E1F09476969EED3AFBDD83B6 /* HomeIndicator WatchKit ExtensionTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +163,7 @@
 				71220E6E24D6FC7700BA6013 /* HomeIndicator.app */,
 				71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */,
 				71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */,
+				872FFC9983629B2E80950A84 /* HomeIndicator WatchKit ExtensionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,6 +294,14 @@
 			path = Usecase;
 			sourceTree = "<group>";
 		};
+		E1F09476969EED3AFBDD83B6 /* HomeIndicator WatchKit ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				79D79554727E1FE39B513DCE /* SmokeTests.swift */,
+			);
+			name = "HomeIndicator WatchKit ExtensionTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +356,24 @@
 			productReference = 71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		C31CE2018A954C8AFD1BA64D /* HomeIndicator WatchKit ExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4F48833EA44965DB57E68B0 /* Build configuration list for PBXNativeTarget "HomeIndicator WatchKit ExtensionTests" */;
+			buildPhases = (
+				6CB83F5C8E85C5AE95C8072A /* Sources */,
+				BAADC0559B564250A954F8F8 /* Frameworks */,
+				6789210974535F3301897B5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E4B341116BEDE6CC854B7BE /* PBXTargetDependency */,
+			);
+			name = "HomeIndicator WatchKit ExtensionTests";
+			productName = "HomeIndicator WatchKit ExtensionTests";
+			productReference = 872FFC9983629B2E80950A84 /* HomeIndicator WatchKit ExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -366,11 +411,19 @@
 				71220E6D24D6FC7700BA6013 /* HomeIndicator */,
 				71220E7124D6FC7700BA6013 /* HomeIndicator WatchKit App */,
 				71220E8024D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */,
+				C31CE2018A954C8AFD1BA64D /* HomeIndicator WatchKit ExtensionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6789210974535F3301897B5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71220E6C24D6FC7700BA6013 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +454,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6CB83F5C8E85C5AE95C8072A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA39AD0CF9D03A7FF7A67F86 /* SmokeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71220E7D24D6FC7F00BA6013 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,6 +494,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5E4B341116BEDE6CC854B7BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "HomeIndicator WatchKit Extension";
+			target = 71220E8024D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */;
+			targetProxy = FAEEC6E36E52552B6D852609 /* PBXContainerItemProxy */;
+		};
 		71220E7524D6FC7700BA6013 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 71220E7124D6FC7700BA6013 /* HomeIndicator WatchKit App */;
@@ -465,6 +532,35 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		41EBF09F53AB848AC01AF6EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextensiontests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		4E304C4CC4128EA5A6FDA5FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextensiontests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
 		71220E9924D6FC8000BA6013 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -522,7 +618,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 4;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -576,7 +672,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = 4;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -742,6 +838,15 @@
 			buildConfigurations = (
 				71220EA424D6FC8000BA6013 /* Debug */,
 				71220EA524D6FC8000BA6013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4F48833EA44965DB57E68B0 /* Build configuration list for PBXNativeTarget "HomeIndicator WatchKit ExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41EBF09F53AB848AC01AF6EF /* Release */,
+				4E304C4CC4128EA5A6FDA5FF /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
