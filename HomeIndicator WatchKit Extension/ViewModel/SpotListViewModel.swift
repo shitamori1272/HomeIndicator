@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 class SpotListViewModel: ObservableObject {
     
     private let spotRepository: SpotRepository

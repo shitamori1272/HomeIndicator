@@ -10,7 +10,8 @@ import CoreLocation
 import Combine
 import ClockKit
 
-class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, LocationProvider {
+@MainActor
+class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, ObservableObject, LocationProvider {
     let manager = CLLocationManager()
     var lastKnownLocation: CLLocation?
     var lastKnownHeading: CLHeading?
@@ -19,7 +20,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     
     private let locationSubject: PassthroughSubject<Bool, Never> = .init()
 
-    nonisolated(unsafe) static let shared = LocationFetcher()
+    static let shared = LocationFetcher()
     
     var angle: Double? { lastKnownHeading?.magneticHeading }
 
@@ -60,6 +61,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     }
 }
 
+@MainActor
 protocol LocationProvider: ObservableObject {
     var lastKnownLocation: CLLocation? { get set }
     var lastKnownHeading: CLHeading? { get set }
@@ -70,6 +72,7 @@ extension LocationProvider {
     var angle: Double? { lastKnownHeading?.magneticHeading }
 }
 
+@MainActor
 class MockLocationProvider: LocationProvider {
     var lastKnownLocation: CLLocation?
     

@@ -8,9 +8,10 @@
 
 import UserNotifications
 
+@MainActor
 class NotificationRegister {
     
-    nonisolated(unsafe) private static let notificationCenter = UNUserNotificationCenter.current()
+    private static let notificationCenter = UNUserNotificationCenter.current()
     
     static func registerSessionEndedNotification() {
         let content = UNMutableNotificationContent()

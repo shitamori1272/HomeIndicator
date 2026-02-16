@@ -8,6 +8,7 @@
 
 import WatchKit
 
+@MainActor
 class ExtendedSessionManager: NSObject, ObservableObject {
     
     private var session: WKExtendedRuntimeSession?
