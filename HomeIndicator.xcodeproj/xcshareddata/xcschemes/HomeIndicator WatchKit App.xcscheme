@@ -42,6 +42,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C31CE2018A954C8AFD1BA64D"
+               BuildableName = "HomeIndicator WatchKit ExtensionTests.xctest"
+               BlueprintName = "HomeIndicator WatchKit ExtensionTests"
+               ReferencedContainer = "container:HomeIndicator.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
