@@ -19,7 +19,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate, ObservableObject, Lo
     
     private let locationSubject: PassthroughSubject<Bool, Never> = .init()
 
-    static let shared = LocationFetcher()
+    nonisolated(unsafe) static let shared = LocationFetcher()
     
     var angle: Double? { lastKnownHeading?.magneticHeading }
 
