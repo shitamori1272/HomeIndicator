@@ -34,7 +34,8 @@ class IndicationViewModel: ObservableObject {
         if let lastLocation = locationFecher.lastKnownLocation {
             distance = spotData.distance(from: lastLocation)
             if let lastHeading = locationFecher.lastKnownHeading {
-                angle = Double(lastLocation.angle(target: spotData.location)) - lastHeading.magneticHeading
+                let rawAngle = lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
+                angle = Double(rawAngle.normalizedArrowAngle())
             }
         }
     }
