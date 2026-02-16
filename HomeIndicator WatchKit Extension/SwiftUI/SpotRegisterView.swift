@@ -13,6 +13,7 @@ struct SpotRegisterView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @State private var newName: String = ""
+    @State private var mapCameraPosition: MapCameraPosition = .automatic
     
     @StateObject var viewModel: SpotRegisiterViewModel = SpotRegisiterViewModel()
     
@@ -20,9 +21,11 @@ struct SpotRegisterView: View {
         VStack {
             ZStack {
                 Map(
-                    coordinateRegion: $viewModel.mapRegion,
-                    showsUserLocation: true
+                    position: $mapCameraPosition
                 )
+                .onMapCameraChange { context in
+                    viewModel.mapRegion = context.region
+                }
                 Plus()
                     .stroke(lineWidth: 3)
                     .frame(width: 20, height: 20, alignment: .center)
@@ -34,6 +37,7 @@ struct SpotRegisterView: View {
             }.disabled(newName.isEmpty)
         }
         .onAppear {
+            mapCameraPosition = .region(viewModel.mapRegion)
         }
     }
 }
