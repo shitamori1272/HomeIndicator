@@ -42,8 +42,6 @@
 	</array>
 	<key>WKBackgroundModes</key>
 	<array/>
-	<key>WKExtensionDelegateClassName</key>
-	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>
 	<true/>
 </dict>
