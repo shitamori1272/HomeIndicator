@@ -9,6 +9,7 @@
 import CoreLocation
 import MapKit
 
+@MainActor
 class SpotRegisiterViewModel: ObservableObject {
     
     @Published var mapRegion: MKCoordinateRegion

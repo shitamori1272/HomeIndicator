@@ -10,6 +10,7 @@ import Foundation
 import CoreGraphics
 import Combine
 
+@MainActor
 protocol ContentViewModelProtocol: ObservableObject {
     
     var angle: CGFloat { get set }
@@ -23,6 +24,7 @@ protocol ContentViewModelProtocol: ObservableObject {
     func onAppear()
 }
 
+@MainActor
 class ContentViewModel: ContentViewModelProtocol {
     
     let locationFetcher = LocationFetcher.shared
