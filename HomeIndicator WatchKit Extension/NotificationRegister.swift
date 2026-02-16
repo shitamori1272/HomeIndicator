@@ -10,7 +10,7 @@ import UserNotifications
 
 class NotificationRegister {
     
-    private static let notificationCenter = UNUserNotificationCenter.current()
+    nonisolated(unsafe) private static let notificationCenter = UNUserNotificationCenter.current()
     
     static func registerSessionEndedNotification() {
         let content = UNMutableNotificationContent()
