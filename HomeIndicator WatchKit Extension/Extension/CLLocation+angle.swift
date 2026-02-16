@@ -43,7 +43,7 @@ extension Float {
         var normalized = truncatingRemainder(dividingBy: 360)
         if normalized > 180 {
             normalized -= 360
-        } else if normalized <= -180 {
+        } else if normalized < -180 {
             normalized += 360
         }
 
