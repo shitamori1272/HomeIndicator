@@ -36,3 +36,21 @@ extension CLLocation {
         return atan2(y, x) * 180 / Float.pi
     }
 }
+
+extension Float {
+    // Keep the heading delta stable around "north/up" and avoid jitter.
+    func normalizedArrowAngle(deadZone: Float = 4) -> Float {
+        var normalized = truncatingRemainder(dividingBy: 360)
+        if normalized > 180 {
+            normalized -= 360
+        } else if normalized <= -180 {
+            normalized += 360
+        }
+
+        if abs(normalized) < deadZone {
+            return 0
+        }
+
+        return normalized
+    }
+}

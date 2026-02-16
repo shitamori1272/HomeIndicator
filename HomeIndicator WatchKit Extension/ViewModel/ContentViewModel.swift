@@ -56,7 +56,8 @@ class ContentViewModel: ContentViewModelProtocol {
         guard let lastLocation = locationFetcher.lastKnownLocation,
               let lastHeading = locationFetcher.lastKnownHeading,
               let spotData = spotData else { return }
-        angle = CGFloat(lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading))
+        let rawAngle = lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
+        angle = CGFloat(rawAngle.normalizedArrowAngle())
         distance = spotData.distance(from: lastLocation)
     }
     
