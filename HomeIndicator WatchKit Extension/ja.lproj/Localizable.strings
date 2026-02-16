@@ -1,0 +1,22 @@
+/*
+ Localizable.strings
+ HomeIndicator
+
+ Japanese defaults for user-facing watch flows.
+*/
+
+"common.yes" = "はい";
+
+"content.distance_to_spot_format" = "目的地まで%@m";
+"content.register_first_spot" = "最初のスポットを登録";
+"content.spot_list" = "スポット一覧";
+"content.spot_not_set" = "スポット未設定";
+
+"notification.hello_world" = "こんにちは";
+
+"spot_list.add_spot" = "スポット追加";
+"spot_list.change_spot_message" = "このスポットを目的地に設定しますか？";
+"spot_list.change_spot_title" = "スポット変更";
+
+"spot_register.input_name_placeholder" = "登録名の入力";
+"spot_register.register_current_spot" = "この地点を登録する";

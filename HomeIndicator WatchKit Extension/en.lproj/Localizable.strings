@@ -1,18 +1,22 @@
-/* 
-  Localizable.strings
-  HomeIndicator
+/*
+ Localizable.strings
+ HomeIndicator
 
-  Created by Shuhei Shitamori on 2022/11/29.
-  Copyright © 2022 Shitamori. All rights reserved.
+ English localization coverage for user-facing watch flows.
 */
 
-"スポット一覧" = "Spot List";
-"スポット変更" = "Change Spot";
-"スポット追加" = "Add New Spot";
-"このスポットを目的地に設定しますか？" = "Will you set this Spot?";
-"最初のスポットを登録" = "Register Spot";
-"この地点を登録する" = "Register";
-"はい" = "Yes";
-"いいえ" = "No";
-"登録名の入力" = "Input Name";
-"目的地まで%@m" = "%@m to Spot";
+"common.yes" = "Yes";
+
+"content.distance_to_spot_format" = "%@m to destination";
+"content.register_first_spot" = "Register first spot";
+"content.spot_list" = "Spot list";
+"content.spot_not_set" = "No spot selected";
+
+"notification.hello_world" = "Hello, World!";
+
+"spot_list.add_spot" = "Add spot";
+"spot_list.change_spot_message" = "Set this spot as destination?";
+"spot_list.change_spot_title" = "Change spot";
+
+"spot_register.input_name_placeholder" = "Spot name";
+"spot_register.register_current_spot" = "Register this location";

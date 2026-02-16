@@ -30,7 +30,15 @@ class ContentViewModel: ContentViewModelProtocol {
     @Published var angle: CGFloat = 0
     @Published var distance: CGFloat = 0
     var shouldShowRegisterButton: Bool { spotData == nil }
-    var spotName: String { spotData?.name ?? "スポット未設定" }
+    var spotName: String {
+        spotData?.name ?? NSLocalizedString(
+            "content.spot_not_set",
+            tableName: nil,
+            bundle: .main,
+            value: "スポット未設定",
+            comment: ""
+        )
+    }
     var cancellables = Set<AnyCancellable>()
     
     @Published var spotData: SpotData?

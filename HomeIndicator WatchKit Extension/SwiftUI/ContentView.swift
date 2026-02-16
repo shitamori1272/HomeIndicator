@@ -8,6 +8,7 @@
 
 import SwiftUI
 import ClockKit
+import Foundation
 
 struct ContentView<ViewModel>: View where ViewModel: ContentViewModelProtocol  {
     
@@ -18,21 +19,28 @@ struct ContentView<ViewModel>: View where ViewModel: ContentViewModelProtocol  {
             VStack {
                 if viewModel.shouldShowRegisterButton {
                     NavigationLink(destination: SpotRegisterView()) {
-                        Text("最初のスポットを登録")
+                        Text(localized("content.register_first_spot", "最初のスポットを登録"))
                     }
                 } else {
                     Text(viewModel.spotName)
                     IndicatorView(angle: viewModel.angle, distance: viewModel.distance)
                         .frame(width: 120, height: 120, alignment: .center)
-                    Text("目的地まで\(String(format: "%.2f", viewModel.distance))m")
+                    Text(String(
+                        format: localized("content.distance_to_spot_format", "目的地まで%@m"),
+                        String(format: "%.2f", viewModel.distance)
+                    ))
                     NavigationLink(destination: SpotListView()) {
-                        Text("スポット一覧")
+                        Text(localized("content.spot_list", "スポット一覧"))
                     }
                 }
             }
         }.onAppear {
             viewModel.onAppear()
         }
+    }
+
+    private func localized(_ key: String, _ fallback: String) -> String {
+        NSLocalizedString(key, tableName: nil, bundle: .main, value: fallback, comment: "")
     }
 }
 

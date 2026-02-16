@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct SpotListView: View {
     
@@ -34,15 +35,15 @@ struct SpotListView: View {
         }.toolbar {
             ToolbarItem(placement: .primaryAction) {
                 NavigationLink(destination: SpotRegisterView()) {
-                    Text("スポット追加")
+                    Text(localized("spot_list.add_spot", "スポット追加"))
                 }
             }
         }
         .actionSheet(isPresented: $isShowingSheet) {
-            ActionSheet(title: Text("スポット変更"),
-                        message: Text("このスポットを目的地に設定しますか？"),
+            ActionSheet(title: Text(localized("spot_list.change_spot_title", "スポット変更")),
+                        message: Text(localized("spot_list.change_spot_message", "このスポットを目的地に設定しますか？")),
                         buttons: [
-                            .default(Text("はい"), action: {
+                            .default(Text(localized("common.yes", "はい")), action: {
                                 guard let selectedIndex = selectedIndex else {
                                     return
                                 }
@@ -52,6 +53,10 @@ struct SpotListView: View {
                         ]
             )
         }
+    }
+
+    private func localized(_ key: String, _ fallback: String) -> String {
+        NSLocalizedString(key, tableName: nil, bundle: .main, value: fallback, comment: "")
     }
 }
 

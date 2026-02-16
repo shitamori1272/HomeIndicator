@@ -7,10 +7,17 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct NotificationView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text(NSLocalizedString(
+            "notification.hello_world",
+            tableName: nil,
+            bundle: .main,
+            value: "Hello, World!",
+            comment: ""
+        ))
     }
 }
 
