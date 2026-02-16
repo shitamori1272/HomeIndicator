@@ -21,7 +21,7 @@ struct IndicatorView: View {
             CircleView(distance: distance)
             ArrowView()
                 .rotationEffect(.degrees(Double(angle)))
-                .animation(.linear)
+                .animation(.linear, value: angle)
         }
     }
 }
