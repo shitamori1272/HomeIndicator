@@ -110,6 +110,7 @@
 		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		714290A12936A46400F457CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		714290A32936A46400F457CA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		714DB157275D09BA009C4061 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		714DB159275D1B24009C4061 /* SpotListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewModel.swift; sourceTree = "<group>"; };
 		714DB15B275D1C38009C4061 /* IndexRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -397,10 +398,11 @@
 			};
 			buildConfigurationList = 71220E6B24D6FC7700BA6013 /* Build configuration list for PBXProject "HomeIndicator" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 				Base,
 			);
 			mainGroup = 71220E6724D6FC7700BA6013;
@@ -524,6 +526,7 @@
 		714290A22936A46400F457CA /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
+				714290A32936A46400F457CA /* ja */,
 				714290A12936A46400F457CA /* en */,
 			);
 			name = Localizable.strings;

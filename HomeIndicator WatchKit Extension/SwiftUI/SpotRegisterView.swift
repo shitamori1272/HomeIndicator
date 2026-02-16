@@ -8,6 +8,7 @@
 
 import SwiftUI
 import MapKit
+import Foundation
 
 struct SpotRegisterView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -27,14 +28,18 @@ struct SpotRegisterView: View {
                     .stroke(lineWidth: 3)
                     .frame(width: 20, height: 20, alignment: .center)
             }
-            TextField("登録名の入力", text: $newName)
-            Button("この地点を登録する") {
+            TextField(localized("spot_register.input_name_placeholder", "登録名の入力"), text: $newName)
+            Button(localized("spot_register.register_current_spot", "この地点を登録する")) {
                 viewModel.registerButtonTapped(name: newName, coordinates: viewModel.mapRegion.center)
                 presentationMode.wrappedValue.dismiss()
             }.disabled(newName.isEmpty)
         }
         .onAppear {
         }
+    }
+
+    private func localized(_ key: String, _ fallback: String) -> String {
+        NSLocalizedString(key, tableName: nil, bundle: .main, value: fallback, comment: "")
     }
 }
 
