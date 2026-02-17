@@ -16,13 +16,28 @@ protocol IndexRepository {
 class IndexRepositoryImpl: IndexRepository {
     
     private static let key = "index"
-    private let userDefaults = UserDefaults.standard
+    private static let legacyKey = "spotIndex"
+    private let userDefaults: UserDefaults
+
+    init(userDefaults: UserDefaults = .standard) {
+        self.userDefaults = userDefaults
+    }
     
     func get() -> Int {
-        userDefaults.integer(forKey: Self.key)
+        if userDefaults.object(forKey: Self.key) != nil {
+            return userDefaults.integer(forKey: Self.key)
+        }
+        guard userDefaults.object(forKey: Self.legacyKey) != nil else {
+            return 0
+        }
+        let legacyValue = userDefaults.integer(forKey: Self.legacyKey)
+        userDefaults.set(legacyValue, forKey: Self.key)
+        userDefaults.removeObject(forKey: Self.legacyKey)
+        return legacyValue
     }
     
     func set(_ index: Int) {
         userDefaults.set(index, forKey: Self.key)
+        userDefaults.removeObject(forKey: Self.legacyKey)
     }
 }
