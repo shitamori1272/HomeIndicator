@@ -43,18 +43,12 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastKnownLocation = locations.first
-        didUpdateCLLocation()
         locationSubject.send(true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         lastKnownHeading = newHeading
-        didUpdateCLLocation()
         locationSubject.send(true)
-    }
-    
-    func didUpdateCLLocation() {
-        ComplicationSharedStore().reloadWidgetTimeline()
     }
 }
 
