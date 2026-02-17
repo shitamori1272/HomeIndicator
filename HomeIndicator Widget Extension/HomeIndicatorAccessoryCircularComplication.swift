@@ -7,22 +7,40 @@ struct HomeIndicatorEntry: TimelineEntry {
     let distance: Double
 }
 
+private enum SharedComplicationStore {
+    static let appGroupSuiteName = "group.com.Shitamori.HomeIndicator"
+    static let payloadKey = "complicationPayloadV1"
+}
+
+private struct SharedComplicationPayload: Codable {
+    let updatedAt: Date
+    let angle: Double
+    let distance: Double
+}
+
 struct HomeIndicatorTimelineProvider: TimelineProvider {
     func placeholder(in context: Context) -> HomeIndicatorEntry {
         HomeIndicatorEntry(date: Date(), angle: 45, distance: 120)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (HomeIndicatorEntry) -> Void) {
-        completion(placeholder(in: context))
+        completion(loadCurrentEntry())
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<HomeIndicatorEntry>) -> Void) {
         let now = Date()
-        let entries = [
-            HomeIndicatorEntry(date: now, angle: 30, distance: 150),
-            HomeIndicatorEntry(date: now.addingTimeInterval(15 * 60), angle: 35, distance: 140)
-        ]
+        let current = loadCurrentEntry()
+        let entries = [current]
         completion(Timeline(entries: entries, policy: .after(now.addingTimeInterval(15 * 60))))
+    }
+
+    private func loadCurrentEntry() -> HomeIndicatorEntry {
+        guard let sharedDefaults = UserDefaults(suiteName: SharedComplicationStore.appGroupSuiteName),
+              let data = sharedDefaults.data(forKey: SharedComplicationStore.payloadKey),
+              let payload = try? JSONDecoder().decode(SharedComplicationPayload.self, from: data) else {
+            return HomeIndicatorEntry(date: Date(), angle: 45, distance: 120)
+        }
+        return HomeIndicatorEntry(date: payload.updatedAt, angle: payload.angle, distance: payload.distance)
     }
 }
 

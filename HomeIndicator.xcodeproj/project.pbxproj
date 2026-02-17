@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E4241B4A0815C3C35D0C328 /* HomeIndicatorWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19FAA31BD70DBB02D01DC4 /* HomeIndicatorWidgetBundle.swift */; };
+		4350FAE18070B499DC085585 /* ComplicationSharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D6AE7F4E4D3BBA0FA4D61D /* ComplicationSharedStore.swift */; };
 		5FF02BF3EC0523A22F510C7C /* HomeIndicatorAccessoryCircularComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F24DC2517562CE5753E6B6 /* HomeIndicatorAccessoryCircularComplication.swift */; };
 		710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69724DFDFD200ADA51B /* SpotListView.swift */; };
 		710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69924E01C7500ADA51B /* LocationFetcher.swift */; };
@@ -102,7 +103,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D086555DFD55B09A85FC16B /* HomeIndicator WatchKit Extension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "HomeIndicator WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		22F0A3629297C7F7B8121E3E /* HomeIndicator Widget Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HomeIndicator Widget Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		557C724AD50C07A914667EDC /* HomeIndicator Widget Extension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "HomeIndicator Widget Extension.entitlements"; sourceTree = "<group>"; };
 		5CED350162520B3CF2B2BDF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		710AD69724DFDFD200ADA51B /* SpotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListView.swift; sourceTree = "<group>"; };
 		710AD69924E01C7500ADA51B /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		71CE27E727A5A913009C0AFC /* usage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = usage.plist; sourceTree = "<group>"; };
 		71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
 		71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDeleteUsecase.swift; sourceTree = "<group>"; };
+		76D6AE7F4E4D3BBA0FA4D61D /* ComplicationSharedStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationSharedStore.swift; sourceTree = "<group>"; };
 		79D79554727E1FE39B513DCE /* SmokeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HomeIndicator WatchKit ExtensionTests/SmokeTests.swift"; sourceTree = "<group>"; };
 		80F24DC2517562CE5753E6B6 /* HomeIndicatorAccessoryCircularComplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeIndicatorAccessoryCircularComplication.swift; sourceTree = "<group>"; };
 		872FFC9983629B2E80950A84 /* HomeIndicator WatchKit ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeIndicator WatchKit ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +183,7 @@
 				9D19FAA31BD70DBB02D01DC4 /* HomeIndicatorWidgetBundle.swift */,
 				80F24DC2517562CE5753E6B6 /* HomeIndicatorAccessoryCircularComplication.swift */,
 				8A339A9BE74D873E246700B3 /* Info.plist */,
+				557C724AD50C07A914667EDC /* HomeIndicator Widget Extension.entitlements */,
 			);
 			name = "HomeIndicator Widget Extension";
 			path = "HomeIndicator Widget Extension";
@@ -240,6 +245,8 @@
 				71691E1A2674B01500338931 /* ExtendedSessionManager.swift */,
 				71691E1C2674C53300338931 /* NotificationRegister.swift */,
 				71691E1E2674C8AB00338931 /* IndicationViewModel.swift */,
+				76D6AE7F4E4D3BBA0FA4D61D /* ComplicationSharedStore.swift */,
+				1D086555DFD55B09A85FC16B /* HomeIndicator WatchKit Extension.entitlements */,
 			);
 			path = "HomeIndicator WatchKit Extension";
 			sourceTree = "<group>";
@@ -571,6 +578,7 @@
 				71837D0326511F7F005636D8 /* SpotData.swift in Sources */,
 				71691E1D2674C53300338931 /* NotificationRegister.swift in Sources */,
 				71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */,
+				4350FAE18070B499DC085585 /* ComplicationSharedStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = "HomeIndicator Widget Extension/HomeIndicator Widget Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator Widget Extension/Info.plist";
@@ -801,6 +810,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HomeIndicator WatchKit Extension/HomeIndicator WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HomeIndicator WatchKit Extension/Preview Content\"";
@@ -828,6 +838,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HomeIndicator WatchKit Extension/HomeIndicator WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HomeIndicator WatchKit Extension/Preview Content\"";
@@ -933,6 +944,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = "HomeIndicator Widget Extension/HomeIndicator Widget Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator Widget Extension/Info.plist";

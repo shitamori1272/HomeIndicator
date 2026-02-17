@@ -28,6 +28,7 @@ protocol ContentViewModelProtocol: ObservableObject {
 class ContentViewModel: ContentViewModelProtocol {
     
     let locationFetcher = LocationFetcher.shared
+    private let complicationSharedStore = ComplicationSharedStore()
     
     @Published var angle: CGFloat = 0
     @Published var distance: CGFloat = 0
@@ -69,6 +70,7 @@ class ContentViewModel: ContentViewModelProtocol {
         let rawAngle = lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
         angle = CGFloat(rawAngle.normalizedArrowAngle())
         distance = spotData.distance(from: lastLocation)
+        complicationSharedStore.save(angle: Double(angle), distance: Double(distance))
     }
     
     func onAppear() {
@@ -77,5 +79,6 @@ class ContentViewModel: ContentViewModelProtocol {
         if spotDataList.indices.contains(index) {
             spotData = spotDataList[index]
         }
+        updateAngleAndDistance()
     }
 }
