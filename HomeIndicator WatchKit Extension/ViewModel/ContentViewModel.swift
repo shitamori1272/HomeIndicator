@@ -71,6 +71,7 @@ class ContentViewModel: ContentViewModelProtocol {
         angle = CGFloat(rawAngle.normalizedArrowAngle())
         distance = spotData.distance(from: lastLocation)
         complicationSharedStore.save(angle: Double(angle), distance: Double(distance))
+        complicationSharedStore.reloadWidgetTimeline()
     }
     
     func onAppear() {

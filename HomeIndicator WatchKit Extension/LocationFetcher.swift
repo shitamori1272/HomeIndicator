@@ -59,7 +59,6 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
         complicationServer.activeComplications?.forEach {
             complicationServer.reloadTimeline(for: $0)
         }
-        ComplicationSharedStore().reloadWidgetTimeline()
     }
 }
 
