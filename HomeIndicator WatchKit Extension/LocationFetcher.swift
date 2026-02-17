@@ -9,6 +9,7 @@
 import CoreLocation
 import Combine
 import ClockKit
+import WidgetKit
 
 @MainActor
 class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, ObservableObject, LocationProvider {
