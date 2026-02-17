@@ -3,42 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E4241B4A0815C3C35D0C328 /* HomeIndicatorWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19FAA31BD70DBB02D01DC4 /* HomeIndicatorWidgetBundle.swift */; };
-		4350FAE18070B499DC085585 /* ComplicationSharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D6AE7F4E4D3BBA0FA4D61D /* ComplicationSharedStore.swift */; };
-		5FF02BF3EC0523A22F510C7C /* HomeIndicatorAccessoryCircularComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F24DC2517562CE5753E6B6 /* HomeIndicatorAccessoryCircularComplication.swift */; };
-		710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69724DFDFD200ADA51B /* SpotListView.swift */; };
-		710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69924E01C7500ADA51B /* LocationFetcher.swift */; };
-		710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69B24E02A1400ADA51B /* IndicatorView.swift */; };
 		71220E7324D6FC7700BA6013 /* HomeIndicator WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7A24D6FC7E00BA6013 /* Assets.xcassets */; };
-		71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8624D6FC7F00BA6013 /* ContentView.swift */; };
-		71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */; };
-		71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8C24D6FC7F00BA6013 /* NotificationController.swift */; };
-		71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8E24D6FC7F00BA6013 /* NotificationView.swift */; };
-		71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9224D6FC7F00BA6013 /* Assets.xcassets */; };
-		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
-		714290A02936A46400F457CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714290A22936A46400F457CA /* Localizable.strings */; };
-		714DB158275D09BA009C4061 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB157275D09BA009C4061 /* ContentViewModel.swift */; };
-		714DB15A275D1B24009C4061 /* SpotListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB159275D1B24009C4061 /* SpotListViewModel.swift */; };
-		714DB15C275D1C38009C4061 /* IndexRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB15B275D1C38009C4061 /* IndexRepositoryImpl.swift */; };
-		714DB15F275D1F59009C4061 /* SpotRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB15E275D1F59009C4061 /* SpotRepositoryImpl.swift */; };
-		71691E1D2674C53300338931 /* NotificationRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1C2674C53300338931 /* NotificationRegister.swift */; };
-		71691E1F2674C8AB00338931 /* IndicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71691E1E2674C8AB00338931 /* IndicationViewModel.swift */; };
-		71837D0326511F7F005636D8 /* SpotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71837D0226511F7F005636D8 /* SpotData.swift */; };
-		71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71862E26264FEBCC00C8DA54 /* SpotRepository.swift */; };
-		71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A443522663D90B00A141F7 /* CLLocation+angle.swift */; };
-		71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A44358266C709C00A141F7 /* SpotRegisterView.swift */; };
-		71A4435B266C717A00A141F7 /* SpotRegisiterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */; };
-		71CE27E827A5A913009C0AFC /* usage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CE27E727A5A913009C0AFC /* usage.plist */; };
-		71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */; };
 		9A9E041E2EB34DA2CE26B47F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CED350162520B3CF2B2BDF9 /* Foundation.framework */; };
-		A1B2C3D4E5F60123456789AB /* HomeIndicatorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60123456789AA /* HomeIndicatorWatchApp.swift */; };
 		A48FCE8567367E499FCE1D14 /* HomeIndicator Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 22F0A3629297C7F7B8121E3E /* HomeIndicator Widget Extension.appex */; };
-		CA39AD0CF9D03A7FF7A67F86 /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D79554727E1FE39B513DCE /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,49 +55,45 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D086555DFD55B09A85FC16B /* HomeIndicator WatchKit Extension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "HomeIndicator WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		22F0A3629297C7F7B8121E3E /* HomeIndicator Widget Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HomeIndicator Widget Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		557C724AD50C07A914667EDC /* HomeIndicator Widget Extension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "HomeIndicator Widget Extension.entitlements"; sourceTree = "<group>"; };
 		5CED350162520B3CF2B2BDF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		710AD69724DFDFD200ADA51B /* SpotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListView.swift; sourceTree = "<group>"; };
-		710AD69924E01C7500ADA51B /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
-		710AD69B24E02A1400ADA51B /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		71220E6E24D6FC7700BA6013 /* HomeIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeIndicator WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		71220E7A24D6FC7E00BA6013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		71220E7C24D6FC7E00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71220E8624D6FC7F00BA6013 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		71220E8C24D6FC7F00BA6013 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		71220E8E24D6FC7F00BA6013 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		71220E9224D6FC7F00BA6013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		714290A12936A46400F457CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		714290A32936A46400F457CA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		714DB157275D09BA009C4061 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		714DB159275D1B24009C4061 /* SpotListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewModel.swift; sourceTree = "<group>"; };
-		714DB15B275D1C38009C4061 /* IndexRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexRepositoryImpl.swift; sourceTree = "<group>"; };
-		714DB15E275D1F59009C4061 /* SpotRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepositoryImpl.swift; sourceTree = "<group>"; };
-		71691E1A2674B01500338931 /* ExtendedSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedSessionManager.swift; sourceTree = "<group>"; };
-		71691E1C2674C53300338931 /* NotificationRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRegister.swift; sourceTree = "<group>"; };
-		71691E1E2674C8AB00338931 /* IndicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicationViewModel.swift; sourceTree = "<group>"; };
-		71837D0226511F7F005636D8 /* SpotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotData.swift; sourceTree = "<group>"; };
-		71862E26264FEBCC00C8DA54 /* SpotRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepository.swift; sourceTree = "<group>"; };
-		71A443522663D90B00A141F7 /* CLLocation+angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+angle.swift"; sourceTree = "<group>"; };
-		71A44358266C709C00A141F7 /* SpotRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisterView.swift; sourceTree = "<group>"; };
-		71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisiterViewModel.swift; sourceTree = "<group>"; };
-		71CE27E727A5A913009C0AFC /* usage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = usage.plist; sourceTree = "<group>"; };
-		71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDeleteUsecase.swift; sourceTree = "<group>"; };
-		76D6AE7F4E4D3BBA0FA4D61D /* ComplicationSharedStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationSharedStore.swift; sourceTree = "<group>"; };
-		79D79554727E1FE39B513DCE /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HomeIndicator WatchKit ExtensionTests/SmokeTests.swift"; sourceTree = "<group>"; };
-		80F24DC2517562CE5753E6B6 /* HomeIndicatorAccessoryCircularComplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeIndicatorAccessoryCircularComplication.swift; sourceTree = "<group>"; };
 		872FFC9983629B2E80950A84 /* HomeIndicator WatchKit ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeIndicator WatchKit ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A339A9BE74D873E246700B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D19FAA31BD70DBB02D01DC4 /* HomeIndicatorWidgetBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeIndicatorWidgetBundle.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60123456789AA /* HomeIndicatorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIndicatorWatchApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		71E9EC6B2F44092A00927FBB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 71220E7124D6FC7700BA6013 /* HomeIndicator WatchKit App */;
+		};
+		71E9EC9A2F4409DC00927FBB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HomeIndicatorAccessoryCircularComplication.swift,
+				HomeIndicatorWidgetBundle.swift,
+			);
+			target = 3308B7DC04539F2137651CDE /* HomeIndicator Widget Extension */;
+		};
+		71E9ED862F440CFA00927FBB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ExtendedSessionManager.swift,
+				Info.plist,
+				PushNotificationPayload.apns,
+			);
+			target = 71220E7124D6FC7700BA6013 /* HomeIndicator WatchKit App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		71E9EC672F44092A00927FBB /* HomeIndicator WatchKit App */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (71E9EC6B2F44092A00927FBB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "HomeIndicator WatchKit App"; sourceTree = "<group>"; };
+		71E9EC972F4409DC00927FBB /* HomeIndicator Widget Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (71E9EC9A2F4409DC00927FBB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "HomeIndicator Widget Extension"; sourceTree = "<group>"; };
+		71E9ED6A2F440CFA00927FBB /* HomeIndicator WatchKit Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (71E9ED862F440CFA00927FBB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "HomeIndicator WatchKit Extension"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		415739530F6B2387648F02BC /* Frameworks */ = {
@@ -154,25 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A4ED77E3175D21CF6D01854 /* HomeIndicator Widget Extension */ = {
-			isa = PBXGroup;
-			children = (
-				9D19FAA31BD70DBB02D01DC4 /* HomeIndicatorWidgetBundle.swift */,
-				80F24DC2517562CE5753E6B6 /* HomeIndicatorAccessoryCircularComplication.swift */,
-				8A339A9BE74D873E246700B3 /* Info.plist */,
-				557C724AD50C07A914667EDC /* HomeIndicator Widget Extension.entitlements */,
-			);
-			path = "HomeIndicator Widget Extension";
-			sourceTree = "<group>";
-		};
 		71220E6724D6FC7700BA6013 = {
 			isa = PBXGroup;
 			children = (
-				71220E7624D6FC7700BA6013 /* HomeIndicator WatchKit App */,
-				71220E8524D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */,
+				71E9EC672F44092A00927FBB /* HomeIndicator WatchKit App */,
+				71E9ED6A2F440CFA00927FBB /* HomeIndicator WatchKit Extension */,
 				71220E6F24D6FC7700BA6013 /* Products */,
 				E1F09476969EED3AFBDD83B6 /* HomeIndicator WatchKit ExtensionTests */,
-				4A4ED77E3175D21CF6D01854 /* HomeIndicator Widget Extension */,
+				71E9EC972F4409DC00927FBB /* HomeIndicator Widget Extension */,
 				C21BA8403848B57F61C147BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -186,131 +142,6 @@
 				22F0A3629297C7F7B8121E3E /* HomeIndicator Widget Extension.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		71220E7624D6FC7700BA6013 /* HomeIndicator WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				71220E7A24D6FC7E00BA6013 /* Assets.xcassets */,
-				71220E7C24D6FC7E00BA6013 /* Info.plist */,
-				71CE27E727A5A913009C0AFC /* usage.plist */,
-			);
-			path = "HomeIndicator WatchKit App";
-			sourceTree = "<group>";
-		};
-		71220E8524D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				71A44357266C6C6D00A141F7 /* SwiftUI */,
-				714DB156275D0976009C4061 /* ViewModel */,
-				71A44355266C6C4E00A141F7 /* Domain */,
-				714DB15D275D1F0D009C4061 /* Infra */,
-				71A443512663D8E800A141F7 /* Extension */,
-				A1B2C3D4E5F60123456789AA /* HomeIndicatorWatchApp.swift */,
-				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
-				71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */,
-				71220E8C24D6FC7F00BA6013 /* NotificationController.swift */,
-				714290A22936A46400F457CA /* Localizable.strings */,
-				71220E9224D6FC7F00BA6013 /* Assets.xcassets */,
-				71220E9724D6FC7F00BA6013 /* Info.plist */,
-				71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */,
-				71220E9424D6FC7F00BA6013 /* Preview Content */,
-				71691E1A2674B01500338931 /* ExtendedSessionManager.swift */,
-				71691E1C2674C53300338931 /* NotificationRegister.swift */,
-				71691E1E2674C8AB00338931 /* IndicationViewModel.swift */,
-				76D6AE7F4E4D3BBA0FA4D61D /* ComplicationSharedStore.swift */,
-				1D086555DFD55B09A85FC16B /* HomeIndicator WatchKit Extension.entitlements */,
-			);
-			path = "HomeIndicator WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		71220E9424D6FC7F00BA6013 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		714DB156275D0976009C4061 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				714DB157275D09BA009C4061 /* ContentViewModel.swift */,
-				714DB159275D1B24009C4061 /* SpotListViewModel.swift */,
-				71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		714DB15D275D1F0D009C4061 /* Infra */ = {
-			isa = PBXGroup;
-			children = (
-				714DB15E275D1F59009C4061 /* SpotRepositoryImpl.swift */,
-			);
-			path = Infra;
-			sourceTree = "<group>";
-		};
-		7156A57C2704BFDF00583DDC /* DataStore */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataStore;
-			sourceTree = "<group>";
-		};
-		71A443512663D8E800A141F7 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				71A443522663D90B00A141F7 /* CLLocation+angle.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		71A44354266C6C1D00A141F7 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				71862E26264FEBCC00C8DA54 /* SpotRepository.swift */,
-				714DB15B275D1C38009C4061 /* IndexRepositoryImpl.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		71A44355266C6C4E00A141F7 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				7156A57C2704BFDF00583DDC /* DataStore */,
-				71A44356266C6C5D00A141F7 /* Entity */,
-				71F404DA275B5F25006D42BD /* Usecase */,
-				71A44354266C6C1D00A141F7 /* Repository */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		71A44356266C6C5D00A141F7 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				71837D0226511F7F005636D8 /* SpotData.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		71A44357266C6C6D00A141F7 /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				71220E8624D6FC7F00BA6013 /* ContentView.swift */,
-				710AD69B24E02A1400ADA51B /* IndicatorView.swift */,
-				710AD69724DFDFD200ADA51B /* SpotListView.swift */,
-				71220E8E24D6FC7F00BA6013 /* NotificationView.swift */,
-				71A44358266C709C00A141F7 /* SpotRegisterView.swift */,
-			);
-			path = SwiftUI;
-			sourceTree = "<group>";
-		};
-		71F404DA275B5F25006D42BD /* Usecase */ = {
-			isa = PBXGroup;
-			children = (
-				71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */,
-			);
-			path = Usecase;
 			sourceTree = "<group>";
 		};
 		990C16AB235021442C514EC9 /* watchOS */ = {
@@ -329,14 +160,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E1F09476969EED3AFBDD83B6 /* HomeIndicator WatchKit ExtensionTests */ = {
-			isa = PBXGroup;
-			children = (
-				79D79554727E1FE39B513DCE /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift */,
-			);
-			name = "HomeIndicator WatchKit ExtensionTests";
-			sourceTree = "<group>";
-		};
+		E1F09476969EED3AFBDD83B6 /* HomeIndicator WatchKit ExtensionTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "HomeIndicator WatchKit ExtensionTests"; sourceTree = "<group>"; };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +212,10 @@
 			dependencies = (
 				0B421C2FB39E3EA01CA02A99 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				71E9EC672F44092A00927FBB /* HomeIndicator WatchKit App */,
+				71E9ED6A2F440CFA00927FBB /* HomeIndicator WatchKit Extension */,
+			);
 			name = "HomeIndicator WatchKit App";
 			productName = "HomeIndicator WatchKit App";
 			productReference = 71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */;
@@ -404,6 +232,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E1F09476969EED3AFBDD83B6 /* HomeIndicator WatchKit ExtensionTests */,
 			);
 			name = "HomeIndicator WatchKit ExtensionTests";
 			productName = "HomeIndicator WatchKit ExtensionTests";
@@ -477,11 +308,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */,
-				714290A02936A46400F457CA /* Localizable.strings in Resources */,
-				71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */,
-				71CE27E827A5A913009C0AFC /* usage.plist in Resources */,
-				71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA39AD0CF9D03A7FF7A67F86 /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,27 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71691E1F2674C8AB00338931 /* IndicationViewModel.swift in Sources */,
-				714DB15A275D1B24009C4061 /* SpotListViewModel.swift in Sources */,
-				710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */,
-				714DB15F275D1F59009C4061 /* SpotRepositoryImpl.swift in Sources */,
-				A1B2C3D4E5F60123456789AB /* HomeIndicatorWatchApp.swift in Sources */,
-				714DB158275D09BA009C4061 /* ContentViewModel.swift in Sources */,
-				710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */,
-				71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */,
-				71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */,
-				710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */,
-				71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */,
-				714DB15C275D1C38009C4061 /* IndexRepositoryImpl.swift in Sources */,
-				71862E27264FEBCC00C8DA54 /* SpotRepository.swift in Sources */,
-				71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */,
-				71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */,
-				71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */,
-				71A4435B266C717A00A141F7 /* SpotRegisiterViewModel.swift in Sources */,
-				71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */,
-				71837D0326511F7F005636D8 /* SpotData.swift in Sources */,
-				71691E1D2674C53300338931 /* NotificationRegister.swift in Sources */,
-				4350FAE18070B499DC085585 /* ComplicationSharedStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,8 +332,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E4241B4A0815C3C35D0C328 /* HomeIndicatorWidgetBundle.swift in Sources */,
-				5FF02BF3EC0523A22F510C7C /* HomeIndicatorAccessoryCircularComplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,18 +350,6 @@
 			targetProxy = 71220E7424D6FC7700BA6013 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		714290A22936A46400F457CA /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				714290A32936A46400F457CA /* ja */,
-				714290A12936A46400F457CA /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		24C5EE1F3902864CAE4A4E12 /* Release */ = {
