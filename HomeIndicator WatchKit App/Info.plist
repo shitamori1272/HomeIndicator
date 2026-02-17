@@ -20,12 +20,24 @@
 	<string>1.2.0</string>
 	<key>CFBundleVersion</key>
 	<string>30</string>
+	<key>NSLocationUsageDescription</key>
+	<string>目的地までの距離・方向を算出するために位置情報を利用します。</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>目的地までの距離・方向を算出するために位置情報を利用します。</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>WKWatchKitApp</key>
+	<key>WKApplication</key>
+	<true/>
+	<key>WKBackgroundModes</key>
+	<array/>
+	<key>WKWatchOnly</key>
 	<true/>
 </dict>
 </plist>
