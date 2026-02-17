@@ -16,15 +16,15 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
     var lastKnownLocation: CLLocation?
     var lastKnownHeading: CLHeading?
     
-    private var isStarted = false
-    
     private let locationSubject: PassthroughSubject<Bool, Never> = .init()
+    private let complicationReloader: ComplicationTimelineReloading
 
     static let shared = LocationFetcher()
     
     var angle: Double? { lastKnownHeading?.magneticHeading }
 
-    private override init() {
+    private init(complicationReloader: ComplicationTimelineReloading = ClockKitComplicationReloader()) {
+        self.complicationReloader = complicationReloader
         super.init()
         manager.delegate = self
         manager.allowsBackgroundLocationUpdates = true
@@ -54,6 +54,28 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
     }
     
     func didUpdateCLLocation() {
+        complicationReloader.reloadActiveTimelines()
+    }
+}
+
+@MainActor
+protocol LocationProvider: AnyObject {
+    var lastKnownLocation: CLLocation? { get }
+    var lastKnownHeading: CLHeading? { get }
+    func locationPublisher() -> AnyPublisher<Bool, Never>
+    func start()
+}
+
+extension LocationProvider {
+    var angle: Double? { lastKnownHeading?.magneticHeading }
+}
+
+protocol ComplicationTimelineReloading {
+    func reloadActiveTimelines()
+}
+
+struct ClockKitComplicationReloader: ComplicationTimelineReloading {
+    func reloadActiveTimelines() {
         let complicationServer = CLKComplicationServer.sharedInstance()
         complicationServer.activeComplications?.forEach {
             complicationServer.reloadTimeline(for: $0)
@@ -62,38 +84,26 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
 }
 
 @MainActor
-protocol LocationProvider: ObservableObject {
-    var lastKnownLocation: CLLocation? { get set }
-    var lastKnownHeading: CLHeading? { get set }
-    func start()
-}
-
-extension LocationProvider {
-    var angle: Double? { lastKnownHeading?.magneticHeading }
-}
-
-@MainActor
 class MockLocationProvider: LocationProvider {
-    var lastKnownLocation: CLLocation?
+    private let locationSubject = PassthroughSubject<Bool, Never>()
     
+    var lastKnownLocation: CLLocation?
     var lastKnownHeading: CLHeading?
     
     var angle: Double? = 0
     
     func start() {
         lastKnownLocation = CLLocation(latitude: 35.7142366, longitude: 139.8214326)
-        lastKnownHeading = CLHeading()
-        Timer.scheduledTimer(timeInterval: 1,
-                             target: self,
-                             selector: #selector(MockLocationProvider.timerUpdate),
-                             userInfo: nil,
-                             repeats: true)
+        locationSubject.send(true)
     }
     
-    @objc func timerUpdate() {
-        angle = (angle ?? 0) + 1
-        if let lastLocation = lastKnownLocation {
-            lastKnownLocation = CLLocation(latitude: lastLocation.coordinate.latitude + 0.000001, longitude: lastLocation.coordinate.longitude)
-        }
+    func locationPublisher() -> AnyPublisher<Bool, Never> {
+        locationSubject.eraseToAnyPublisher()
+    }
+    
+    func update(location: CLLocation?, heading: CLHeading?) {
+        lastKnownLocation = location
+        lastKnownHeading = heading
+        locationSubject.send(true)
     }
 }

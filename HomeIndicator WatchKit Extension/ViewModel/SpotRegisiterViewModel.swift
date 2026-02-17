@@ -15,10 +15,16 @@ class SpotRegisiterViewModel: ObservableObject {
     @Published var mapRegion: MKCoordinateRegion
     
     private let spotRepository: SpotRepository
+    private let locationProvider: any LocationProvider
     
-    init(spotRepositroy: SpotRepository = SpotRepositoryImpl()) {
+    init(
+        spotRepositroy: SpotRepository = SpotRepositoryImpl(),
+        locationProvider: any LocationProvider = LocationFetcher.shared
+    ) {
         self.spotRepository = spotRepositroy
-        let coordinate = LocationFetcher.shared.lastKnownLocation?.coordinate ?? CLLocationCoordinate2D()
+        self.locationProvider = locationProvider
+        locationProvider.start()
+        let coordinate = locationProvider.lastKnownLocation?.coordinate ?? CLLocationCoordinate2D()
         mapRegion = MKCoordinateRegion(center: coordinate, span: .init())
     }
     
