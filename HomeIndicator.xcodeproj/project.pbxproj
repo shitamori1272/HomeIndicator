@@ -20,7 +20,6 @@
 		71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */; };
 		71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8C24D6FC7F00BA6013 /* NotificationController.swift */; };
 		71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8E24D6FC7F00BA6013 /* NotificationView.swift */; };
-		71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E9024D6FC7F00BA6013 /* ComplicationController.swift */; };
 		71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9224D6FC7F00BA6013 /* Assets.xcassets */; };
 		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
 		A1B2C3D4E5F60123456789AB /* HomeIndicatorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60123456789AA /* HomeIndicatorWatchApp.swift */; };
@@ -37,7 +36,6 @@
 		71A44359266C709C00A141F7 /* SpotRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A44358266C709C00A141F7 /* SpotRegisterView.swift */; };
 		71A4435B266C717A00A141F7 /* SpotRegisiterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */; };
 		71CE27E827A5A913009C0AFC /* usage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CE27E727A5A913009C0AFC /* usage.plist */; };
-		71CECD23275D25AC0037FE06 /* ComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */; };
 		71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */; };
 		9A9E041E2EB34DA2CE26B47F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CED350162520B3CF2B2BDF9 /* Foundation.framework */; };
 		A48FCE8567367E499FCE1D14 /* HomeIndicator Widget Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22F0A3629297C7F7B8121E3E /* HomeIndicator Widget Extension.appex */; };
@@ -118,7 +116,6 @@
 		71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		71220E8C24D6FC7F00BA6013 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		71220E8E24D6FC7F00BA6013 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		71220E9024D6FC7F00BA6013 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		71220E9224D6FC7F00BA6013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,7 +136,6 @@
 		71A44358266C709C00A141F7 /* SpotRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisterView.swift; sourceTree = "<group>"; };
 		71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRegisiterViewModel.swift; sourceTree = "<group>"; };
 		71CE27E727A5A913009C0AFC /* usage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = usage.plist; sourceTree = "<group>"; };
-		71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
 		71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDeleteUsecase.swift; sourceTree = "<group>"; };
 		76D6AE7F4E4D3BBA0FA4D61D /* ComplicationSharedStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComplicationSharedStore.swift; sourceTree = "<group>"; };
 		79D79554727E1FE39B513DCE /* SmokeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HomeIndicator WatchKit ExtensionTests/SmokeTests.swift"; sourceTree = "<group>"; };
@@ -233,7 +229,6 @@
 				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
 				71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */,
 				71220E8C24D6FC7F00BA6013 /* NotificationController.swift */,
-				71220E9024D6FC7F00BA6013 /* ComplicationController.swift */,
 				714290A22936A46400F457CA /* Localizable.strings */,
 				71220E9224D6FC7F00BA6013 /* Assets.xcassets */,
 				71220E9724D6FC7F00BA6013 /* Info.plist */,
@@ -261,7 +256,6 @@
 			children = (
 				714DB157275D09BA009C4061 /* ContentViewModel.swift */,
 				714DB159275D1B24009C4061 /* SpotListViewModel.swift */,
-				71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */,
 				71A4435A266C717A00A141F7 /* SpotRegisiterViewModel.swift */,
 			);
 			path = ViewModel;
@@ -568,12 +562,10 @@
 				71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */,
 				71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */,
 				71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */,
-				71CECD23275D25AC0037FE06 /* ComplicationViewModel.swift in Sources */,
 				71A4435B266C717A00A141F7 /* SpotRegisiterViewModel.swift in Sources */,
 				71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */,
 				71837D0326511F7F005636D8 /* SpotData.swift in Sources */,
 				71691E1D2674C53300338931 /* NotificationRegister.swift in Sources */,
-				71220E9124D6FC7F00BA6013 /* ComplicationController.swift in Sources */,
 				4350FAE18070B499DC085585 /* ComplicationSharedStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,7 +789,6 @@
 		71220E9C24D6FC8000BA6013 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HomeIndicator WatchKit Extension/HomeIndicator WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -825,7 +816,6 @@
 		71220E9D24D6FC8000BA6013 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HomeIndicator WatchKit Extension/HomeIndicator WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;

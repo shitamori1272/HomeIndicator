@@ -8,8 +8,6 @@
 
 import CoreLocation
 import Combine
-import ClockKit
-import WidgetKit
 
 @MainActor
 class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, ObservableObject, LocationProvider {
@@ -18,14 +16,12 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
     var lastKnownHeading: CLHeading?
     
     private let locationSubject: PassthroughSubject<Bool, Never> = .init()
-    private let complicationReloader: ComplicationTimelineReloading
 
     static let shared = LocationFetcher()
     
     var angle: Double? { lastKnownHeading?.magneticHeading }
 
-    private init(complicationReloader: ComplicationTimelineReloading = ClockKitComplicationReloader()) {
-        self.complicationReloader = complicationReloader
+    private override init() {
         super.init()
         manager.delegate = self
         manager.allowsBackgroundLocationUpdates = true
@@ -44,18 +40,12 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastKnownLocation = locations.first
-        didUpdateCLLocation()
         locationSubject.send(true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         lastKnownHeading = newHeading
-        didUpdateCLLocation()
         locationSubject.send(true)
-    }
-    
-    func didUpdateCLLocation() {
-        complicationReloader.reloadActiveTimelines()
     }
 }
 
@@ -69,19 +59,6 @@ protocol LocationProvider: AnyObject {
 
 extension LocationProvider {
     var angle: Double? { lastKnownHeading?.magneticHeading }
-}
-
-protocol ComplicationTimelineReloading {
-    func reloadActiveTimelines()
-}
-
-struct ClockKitComplicationReloader: ComplicationTimelineReloading {
-    func reloadActiveTimelines() {
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        complicationServer.activeComplications?.forEach {
-            complicationServer.reloadTimeline(for: $0)
-        }
-    }
 }
 
 @MainActor

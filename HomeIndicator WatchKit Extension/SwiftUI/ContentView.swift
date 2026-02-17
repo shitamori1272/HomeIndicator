@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import ClockKit
 import Foundation
 
 struct ContentView<ViewModel>: View where ViewModel: ContentViewModelProtocol  {
