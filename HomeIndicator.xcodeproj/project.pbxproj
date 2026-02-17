@@ -14,16 +14,15 @@
 		710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69924E01C7500ADA51B /* LocationFetcher.swift */; };
 		710AD69C24E02A1400ADA51B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710AD69B24E02A1400ADA51B /* IndicatorView.swift */; };
 		71220E7324D6FC7700BA6013 /* HomeIndicator WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		71220E7924D6FC7700BA6013 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7724D6FC7700BA6013 /* Interface.storyboard */; };
 		71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7A24D6FC7E00BA6013 /* Assets.xcassets */; };
 		71220E8224D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8624D6FC7F00BA6013 /* ContentView.swift */; };
-		71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8824D6FC7F00BA6013 /* HostingController.swift */; };
 		71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */; };
 		71220E8D24D6FC7F00BA6013 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8C24D6FC7F00BA6013 /* NotificationController.swift */; };
 		71220E8F24D6FC7F00BA6013 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8E24D6FC7F00BA6013 /* NotificationView.swift */; };
 		71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9224D6FC7F00BA6013 /* Assets.xcassets */; };
 		71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */; };
+		A1B2C3D4E5F60123456789AB /* HomeIndicatorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60123456789AA /* HomeIndicatorWatchApp.swift */; };
 		714290A02936A46400F457CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714290A22936A46400F457CA /* Localizable.strings */; };
 		714DB158275D09BA009C4061 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB157275D09BA009C4061 /* ContentViewModel.swift */; };
 		714DB15A275D1B24009C4061 /* SpotListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DB159275D1B24009C4061 /* SpotListViewModel.swift */; };
@@ -110,12 +109,10 @@
 		710AD69B24E02A1400ADA51B /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		71220E6E24D6FC7700BA6013 /* HomeIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeIndicator WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		71220E7824D6FC7700BA6013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		71220E7A24D6FC7E00BA6013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71220E7C24D6FC7E00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HomeIndicator WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E8624D6FC7F00BA6013 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		71220E8824D6FC7F00BA6013 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		71220E8C24D6FC7F00BA6013 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		71220E8E24D6FC7F00BA6013 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -123,6 +120,7 @@
 		71220E9524D6FC7F00BA6013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71220E9724D6FC7F00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71220E9824D6FC7F00BA6013 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A1B2C3D4E5F60123456789AA /* HomeIndicatorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIndicatorWatchApp.swift; sourceTree = "<group>"; };
 		714290A12936A46400F457CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		714290A32936A46400F457CA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		714DB157275D09BA009C4061 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 		71220E7624D6FC7700BA6013 /* HomeIndicator WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				71220E7724D6FC7700BA6013 /* Interface.storyboard */,
 				71220E7A24D6FC7E00BA6013 /* Assets.xcassets */,
 				71220E7C24D6FC7E00BA6013 /* Info.plist */,
 				71CE27E727A5A913009C0AFC /* usage.plist */,
@@ -228,8 +225,8 @@
 				71A44355266C6C4E00A141F7 /* Domain */,
 				714DB15D275D1F0D009C4061 /* Infra */,
 				71A443512663D8E800A141F7 /* Extension */,
+				A1B2C3D4E5F60123456789AA /* HomeIndicatorWatchApp.swift */,
 				710AD69924E01C7500ADA51B /* LocationFetcher.swift */,
-				71220E8824D6FC7F00BA6013 /* HostingController.swift */,
 				71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */,
 				71220E8C24D6FC7F00BA6013 /* NotificationController.swift */,
 				714290A22936A46400F457CA /* Localizable.strings */,
@@ -520,7 +517,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */,
-				71220E7924D6FC7700BA6013 /* Interface.storyboard in Resources */,
 				71CE27E827A5A913009C0AFC /* usage.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +550,7 @@
 				714DB15A275D1B24009C4061 /* SpotListViewModel.swift in Sources */,
 				710AD69824DFDFD200ADA51B /* SpotListView.swift in Sources */,
 				714DB15F275D1F59009C4061 /* SpotRepositoryImpl.swift in Sources */,
-				71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */,
+				A1B2C3D4E5F60123456789AB /* HomeIndicatorWatchApp.swift in Sources */,
 				714DB158275D09BA009C4061 /* ContentViewModel.swift in Sources */,
 				710AD69A24E01C7500ADA51B /* LocationFetcher.swift in Sources */,
 				71A443532663D90B00A141F7 /* CLLocation+angle.swift in Sources */,
@@ -611,14 +607,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		71220E7724D6FC7700BA6013 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				71220E7824D6FC7700BA6013 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		714290A22936A46400F457CA /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

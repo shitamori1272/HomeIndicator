@@ -27,7 +27,7 @@ protocol ContentViewModelProtocol: ObservableObject {
 @MainActor
 class ContentViewModel: ContentViewModelProtocol {
     
-    let locationFetcher = LocationFetcher.shared
+    private let locationProvider: any LocationProvider
     private let complicationSharedStore = ComplicationSharedStore()
     
     @Published var angle: CGFloat = 0
@@ -49,23 +49,26 @@ class ContentViewModel: ContentViewModelProtocol {
     private let indexRepository: IndexRepository
     
     init(
+        locationProvider: any LocationProvider = LocationFetcher.shared,
         spotRepository: SpotRepository = SpotRepositoryImpl(),
         indexRepository: IndexRepository = IndexRepositoryImpl()
     ) {
+        self.locationProvider = locationProvider
         self.spotRepository = spotRepository
         self.indexRepository = indexRepository
-        
-        updateAngleAndDistance()
-        
-        locationFetcher.locationPublisher().sink { [weak self] _ in
+
+        locationProvider.locationPublisher().sink { [weak self] _ in
             guard let self = self else { return }
             self.updateAngleAndDistance()
         }.store(in: &cancellables)
+
+        locationProvider.start()
+        updateAngleAndDistance()
     }
     
     func updateAngleAndDistance() {
-        guard let lastLocation = locationFetcher.lastKnownLocation,
-              let lastHeading = locationFetcher.lastKnownHeading,
+        guard let lastLocation = locationProvider.lastKnownLocation,
+              let lastHeading = locationProvider.lastKnownHeading,
               let spotData = spotData else { return }
         let rawAngle = lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
         angle = CGFloat(rawAngle.normalizedArrowAngle())

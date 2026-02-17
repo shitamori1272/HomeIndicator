@@ -8,15 +8,12 @@
 
 import CoreLocation
 import Combine
-import WidgetKit
 
 @MainActor
 class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, ObservableObject, LocationProvider {
     let manager = CLLocationManager()
     var lastKnownLocation: CLLocation?
     var lastKnownHeading: CLHeading?
-    
-    private var isStarted = false
     
     private let locationSubject: PassthroughSubject<Bool, Never> = .init()
 
@@ -53,9 +50,10 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
 }
 
 @MainActor
-protocol LocationProvider: ObservableObject {
-    var lastKnownLocation: CLLocation? { get set }
-    var lastKnownHeading: CLHeading? { get set }
+protocol LocationProvider: AnyObject {
+    var lastKnownLocation: CLLocation? { get }
+    var lastKnownHeading: CLHeading? { get }
+    func locationPublisher() -> AnyPublisher<Bool, Never>
     func start()
 }
 
@@ -65,26 +63,25 @@ extension LocationProvider {
 
 @MainActor
 class MockLocationProvider: LocationProvider {
-    var lastKnownLocation: CLLocation?
+    private let locationSubject = PassthroughSubject<Bool, Never>()
     
+    var lastKnownLocation: CLLocation?
     var lastKnownHeading: CLHeading?
     
     var angle: Double? = 0
     
     func start() {
         lastKnownLocation = CLLocation(latitude: 35.7142366, longitude: 139.8214326)
-        lastKnownHeading = CLHeading()
-        Timer.scheduledTimer(timeInterval: 1,
-                             target: self,
-                             selector: #selector(MockLocationProvider.timerUpdate),
-                             userInfo: nil,
-                             repeats: true)
+        locationSubject.send(true)
     }
     
-    @objc func timerUpdate() {
-        angle = (angle ?? 0) + 1
-        if let lastLocation = lastKnownLocation {
-            lastKnownLocation = CLLocation(latitude: lastLocation.coordinate.latitude + 0.000001, longitude: lastLocation.coordinate.longitude)
-        }
+    func locationPublisher() -> AnyPublisher<Bool, Never> {
+        locationSubject.eraseToAnyPublisher()
+    }
+    
+    func update(location: CLLocation?, heading: CLHeading?) {
+        lastKnownLocation = location
+        lastKnownHeading = heading
+        locationSubject.send(true)
     }
 }

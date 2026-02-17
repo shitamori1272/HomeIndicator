@@ -20,20 +20,6 @@
                ReferencedContainer = "container:HomeIndicator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "71220E6D24D6FC7700BA6013"
-               BuildableName = "HomeIndicator.app"
-               BlueprintName = "HomeIndicator"
-               ReferencedContainer = "container:HomeIndicator.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

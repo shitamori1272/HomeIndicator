@@ -39,19 +39,23 @@ struct SpotListView: View {
                 }
             }
         }
-        .actionSheet(isPresented: $isShowingSheet) {
-            ActionSheet(title: Text(localized("spot_list.change_spot_title", "スポット変更")),
-                        message: Text(localized("spot_list.change_spot_message", "このスポットを目的地に設定しますか？")),
-                        buttons: [
-                            .default(Text(localized("common.yes", "はい")), action: {
-                                guard let selectedIndex = selectedIndex else {
-                                    return
-                                }
-                                viewModel.onSelected(at: selectedIndex)
-                                self.selectedIndex = nil
-                            })
-                        ]
-            )
+        .confirmationDialog(
+            localized("spot_list.change_spot_title", "スポット変更"),
+            isPresented: $isShowingSheet,
+            titleVisibility: .visible
+        ) {
+            Button(localized("common.yes", "はい")) {
+                guard let selectedIndex = selectedIndex else {
+                    return
+                }
+                viewModel.onSelected(at: selectedIndex)
+                self.selectedIndex = nil
+            }
+            Button(localized("common.cancel", "キャンセル"), role: .cancel) {
+                self.selectedIndex = nil
+            }
+        } message: {
+            Text(localized("spot_list.change_spot_message", "このスポットを目的地に設定しますか？"))
         }
     }
 
