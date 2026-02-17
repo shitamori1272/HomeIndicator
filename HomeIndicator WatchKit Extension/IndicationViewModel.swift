@@ -12,7 +12,7 @@ import Combine
 @MainActor
 class IndicationViewModel: ObservableObject {
     
-    private let locationFecher = LocationFetcher.shared
+    private let locationProvider: any LocationProvider
     var cancellables = Set<AnyCancellable>()
     
     var spotData: SpotData
@@ -21,20 +21,25 @@ class IndicationViewModel: ObservableObject {
     
     @Published var distance: Double = 0
     
-    init?(spotData: SpotData?) {
+    init?(
+        spotData: SpotData?,
+        locationProvider: any LocationProvider = LocationFetcher.shared
+    ) {
         guard let spotData = spotData else { return nil }
         self.spotData = spotData
+        self.locationProvider = locationProvider
+        locationProvider.start()
         
-        locationFecher.locationPublisher().sink { [weak self] _ in
+        locationProvider.locationPublisher().sink { [weak self] _ in
             guard let self = self else { return }
             self.updateValues()
         }.store(in: &cancellables)
     }
     
     func updateValues() {
-        if let lastLocation = locationFecher.lastKnownLocation {
+        if let lastLocation = locationProvider.lastKnownLocation {
             distance = spotData.distance(from: lastLocation)
-            if let lastHeading = locationFecher.lastKnownHeading {
+            if let lastHeading = locationProvider.lastKnownHeading {
                 let rawAngle = lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
                 angle = Double(rawAngle.normalizedArrowAngle())
             }
