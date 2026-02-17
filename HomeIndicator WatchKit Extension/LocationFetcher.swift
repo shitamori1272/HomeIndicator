@@ -8,7 +8,6 @@
 
 import CoreLocation
 import Combine
-import ClockKit
 import WidgetKit
 
 @MainActor
@@ -55,10 +54,6 @@ class LocationFetcher: NSObject, @preconcurrency CLLocationManagerDelegate, Obse
     }
     
     func didUpdateCLLocation() {
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        complicationServer.activeComplications?.forEach {
-            complicationServer.reloadTimeline(for: $0)
-        }
         ComplicationSharedStore().reloadWidgetTimeline()
     }
 }
