@@ -28,12 +28,14 @@ class IndicationViewModel: ObservableObject {
         guard let spotData = spotData else { return nil }
         self.spotData = spotData
         self.locationProvider = locationProvider
-        locationProvider.start()
-        
+
         locationProvider.locationPublisher().sink { [weak self] _ in
             guard let self = self else { return }
             self.updateValues()
         }.store(in: &cancellables)
+
+        locationProvider.start()
+        updateValues()
     }
     
     func updateValues() {

@@ -55,14 +55,14 @@ class ContentViewModel: ContentViewModelProtocol {
         self.locationProvider = locationProvider
         self.spotRepository = spotRepository
         self.indexRepository = indexRepository
-        
-        locationProvider.start()
-        updateAngleAndDistance()
-        
+
         locationProvider.locationPublisher().sink { [weak self] _ in
             guard let self = self else { return }
             self.updateAngleAndDistance()
         }.store(in: &cancellables)
+
+        locationProvider.start()
+        updateAngleAndDistance()
     }
     
     func updateAngleAndDistance() {
@@ -80,5 +80,6 @@ class ContentViewModel: ContentViewModelProtocol {
         if spotDataList.indices.contains(index) {
             spotData = spotDataList[index]
         }
+        updateAngleAndDistance()
     }
 }
