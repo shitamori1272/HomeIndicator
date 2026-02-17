@@ -15,6 +15,6 @@ struct HomeIndicatorWatchApp: App {
         WindowGroup {
             ContentView<ContentViewModel>(viewModel: ContentViewModel())
         }
-        WKNotificationScene(controller: NotificationController.self, category: "sessionEnd")
+        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }
