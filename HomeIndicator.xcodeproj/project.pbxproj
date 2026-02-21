@@ -358,7 +358,10 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = "HomeIndicator Widget Extension/HomeIndicator Widget Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 30;
+				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator Widget Extension/Info.plist";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.widgetextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -535,6 +538,7 @@
 				CODE_SIGN_ENTITLEMENTS = "HomeIndicator WatchKit Extension/HomeIndicator WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 30;
+				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
@@ -560,6 +564,7 @@
 				CODE_SIGN_ENTITLEMENTS = "HomeIndicator WatchKit Extension/HomeIndicator WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 30;
+				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
@@ -614,7 +619,10 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = "HomeIndicator Widget Extension/HomeIndicator Widget Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 30;
+				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator Widget Extension/Info.plist";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.widgetextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
