@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>30</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSLocationUsageDescription</key>
 	<string>目的地までの距離・方向を算出するために位置情報を利用します。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
