@@ -21,9 +21,9 @@ struct SpotRegisterView: View {
     var body: some View {
         VStack {
             ZStack {
-                Map(
-                    position: $mapCameraPosition
-                )
+                Map(position: $mapCameraPosition) {
+                    UserAnnotation()
+                }
                 .onMapCameraChange { context in
                     viewModel.mapRegion = context.region
                 }

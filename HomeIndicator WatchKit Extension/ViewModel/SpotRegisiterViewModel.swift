@@ -25,7 +25,7 @@ class SpotRegisiterViewModel: ObservableObject {
         self.locationProvider = locationProvider
         locationProvider.start()
         let coordinate = locationProvider.lastKnownLocation?.coordinate ?? CLLocationCoordinate2D()
-        mapRegion = MKCoordinateRegion(center: coordinate, span: .init())
+        mapRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     }
     
     func registerButtonTapped(name: String, coordinates: CLLocationCoordinate2D) {
