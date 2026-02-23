@@ -588,6 +588,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 30;
+				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator WatchKit App/usage.plist";
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator;
@@ -603,6 +604,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 30;
+				DEVELOPMENT_TEAM = 95VBBVY9CC;
 				INFOPLIST_FILE = "HomeIndicator WatchKit App/usage.plist";
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator;
