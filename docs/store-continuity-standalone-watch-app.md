@@ -1,6 +1,8 @@
-# Store Continuity for Standalone Watch App
+# Store Continuity for Watch App Distribution
 
-This project now treats `HomeIndicator WatchKit App` as the primary archive and distribution product.
+The primary distribution product is `HomeIndicator WatchKit App`. The iOS
+container target is included in the build scheme so that Xcode Cloud can
+produce a valid `app-store` export archive for TestFlight upload.
 
 ## Continuity Strategy
 
@@ -8,14 +10,18 @@ This project now treats `HomeIndicator WatchKit App` as the primary archive and 
   - `com.Shitamori.HomeIndicator.watchkitapp`
   - `com.Shitamori.HomeIndicator.watchkitapp.watchkitextension`
 - Keep versioning on the existing watch app target (`MARKETING_VERSION` / `CURRENT_PROJECT_VERSION`).
-- Build and upload using the watch app scheme (`HomeIndicator WatchKit App`) only.
+- Build and upload using the watch app scheme (`HomeIndicator WatchKit App`).
 
-## Applied Changes
+## Why the iOS container is in the scheme
 
-- Removed the iOS container target from the shared watch app scheme build action.
-- Aligned fastlane signing identifiers to watch-only bundle IDs.
+Xcode 26 does not accept the `app-store` export method for pure watchOS
+archives (only `release-testing`, `enterprise`, `debugging` are valid).
+Xcode Cloud generates an `app-store` export options plist for TestFlight,
+and there is no custom script hook that runs between plist generation and
+export execution. Including the iOS container makes the archive an iOS
+archive, for which `app-store` is valid.
 
 ## Operational Check
 
 - Build: `xcodebuild -project "HomeIndicator.xcodeproj" -scheme "HomeIndicator WatchKit App" -destination "generic/platform=watchOS" build`
-- Upload path: `bundle exec fastlane ios beta_ci`
+- Upload path: Xcode Cloud (TestFlight)
