@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,6 @@
 		71220E7324D6FC7700BA6013 /* HomeIndicator WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		71220E7924D6FC7700BA6013 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7724D6FC7700BA6013 /* Interface.storyboard */; };
 		71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71220E7A24D6FC7E00BA6013 /* Assets.xcassets */; };
-		71220E8224D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		71220E8724D6FC7F00BA6013 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8624D6FC7F00BA6013 /* ContentView.swift */; };
 		71220E8924D6FC7F00BA6013 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8824D6FC7F00BA6013 /* HostingController.swift */; };
 		71220E8B24D6FC7F00BA6013 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */; };
@@ -37,7 +36,7 @@
 		71CE27E827A5A913009C0AFC /* usage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CE27E727A5A913009C0AFC /* usage.plist */; };
 		71CECD23275D25AC0037FE06 /* ComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */; };
 		71F404DC275B5F46006D42BD /* SpotDeleteUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */; };
-		CA39AD0CF9D03A7FF7A67F86 /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D79554727E1FE39B513DCE /* SmokeTests.swift */; };
+		CA39AD0CF9D03A7FF7A67F86 /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D79554727E1FE39B513DCE /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,34 +47,9 @@
 			remoteGlobalIDString = 71220E7124D6FC7700BA6013;
 			remoteInfo = "HomeIndicator WatchKit App";
 		};
-		71220E8324D6FC7F00BA6013 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71220E6824D6FC7700BA6013 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 71220E8024D6FC7F00BA6013;
-			remoteInfo = "HomeIndicator WatchKit Extension";
-		};
-		FAEEC6E36E52552B6D852609 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71220E6824D6FC7700BA6013 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 71220E8024D6FC7F00BA6013;
-			remoteInfo = "HomeIndicator WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		71220E9E24D6FC8000BA6013 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				71220E8224D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71220EA224D6FC8000BA6013 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,7 +72,6 @@
 		71220E7824D6FC7700BA6013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		71220E7A24D6FC7E00BA6013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71220E7C24D6FC7E00BA6013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HomeIndicator WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71220E8624D6FC7F00BA6013 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		71220E8824D6FC7F00BA6013 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		71220E8A24D6FC7F00BA6013 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +99,7 @@
 		71CE27E727A5A913009C0AFC /* usage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = usage.plist; sourceTree = "<group>"; };
 		71CECD22275D25AC0037FE06 /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
 		71F404DB275B5F46006D42BD /* SpotDeleteUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDeleteUsecase.swift; sourceTree = "<group>"; };
-		79D79554727E1FE39B513DCE /* SmokeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HomeIndicator WatchKit ExtensionTests/SmokeTests.swift"; sourceTree = "<group>"; };
+		79D79554727E1FE39B513DCE /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HomeIndicator WatchKit ExtensionTests/SmokeTests.swift"; sourceTree = "<group>"; };
 		872FFC9983629B2E80950A84 /* HomeIndicator WatchKit ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeIndicator WatchKit ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,7 +136,6 @@
 			children = (
 				71220E6E24D6FC7700BA6013 /* HomeIndicator.app */,
 				71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */,
-				71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */,
 				872FFC9983629B2E80950A84 /* HomeIndicator WatchKit ExtensionTests.xctest */,
 			);
 			name = Products;
@@ -298,7 +270,7 @@
 		E1F09476969EED3AFBDD83B6 /* HomeIndicator WatchKit ExtensionTests */ = {
 			isa = PBXGroup;
 			children = (
-				79D79554727E1FE39B513DCE /* SmokeTests.swift */,
+				79D79554727E1FE39B513DCE /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift */,
 			);
 			name = "HomeIndicator WatchKit ExtensionTests";
 			sourceTree = "<group>";
@@ -328,34 +300,17 @@
 			buildConfigurationList = 71220E9F24D6FC8000BA6013 /* Build configuration list for PBXNativeTarget "HomeIndicator WatchKit App" */;
 			buildPhases = (
 				71220E7024D6FC7700BA6013 /* Resources */,
-				71220E9E24D6FC8000BA6013 /* Embed App Extensions */,
+				71220E7D24D6FC7F00BA6013 /* Sources */,
+				71220E7E24D6FC7F00BA6013 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				71220E8424D6FC7F00BA6013 /* PBXTargetDependency */,
 			);
 			name = "HomeIndicator WatchKit App";
 			productName = "HomeIndicator WatchKit App";
 			productReference = 71220E7224D6FC7700BA6013 /* HomeIndicator WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		71220E8024D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 71220E9B24D6FC8000BA6013 /* Build configuration list for PBXNativeTarget "HomeIndicator WatchKit Extension" */;
-			buildPhases = (
-				71220E7D24D6FC7F00BA6013 /* Sources */,
-				71220E7E24D6FC7F00BA6013 /* Frameworks */,
-				71220E7F24D6FC7F00BA6013 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "HomeIndicator WatchKit Extension";
-			productName = "HomeIndicator WatchKit Extension";
-			productReference = 71220E8124D6FC7F00BA6013 /* HomeIndicator WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 		C31CE2018A954C8AFD1BA64D /* HomeIndicator WatchKit ExtensionTests */ = {
 			isa = PBXNativeTarget;
@@ -368,7 +323,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5E4B341116BEDE6CC854B7BE /* PBXTargetDependency */,
 			);
 			name = "HomeIndicator WatchKit ExtensionTests";
 			productName = "HomeIndicator WatchKit ExtensionTests";
@@ -381,17 +335,15 @@
 		71220E6824D6FC7700BA6013 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 2620;
 				ORGANIZATIONNAME = Shitamori;
 				TargetAttributes = {
 					71220E6D24D6FC7700BA6013 = {
 						CreatedOnToolsVersion = 11.6;
 					};
 					71220E7124D6FC7700BA6013 = {
-						CreatedOnToolsVersion = 11.6;
-					};
-					71220E8024D6FC7F00BA6013 = {
 						CreatedOnToolsVersion = 11.6;
 					};
 				};
@@ -412,7 +364,6 @@
 			targets = (
 				71220E6D24D6FC7700BA6013 /* HomeIndicator */,
 				71220E7124D6FC7700BA6013 /* HomeIndicator WatchKit App */,
-				71220E8024D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */,
 				C31CE2018A954C8AFD1BA64D /* HomeIndicator WatchKit ExtensionTests */,
 			);
 		};
@@ -437,19 +388,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714290A02936A46400F457CA /* Localizable.strings in Resources */,
+				71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */,
 				71220E7B24D6FC7E00BA6013 /* Assets.xcassets in Resources */,
 				71220E7924D6FC7700BA6013 /* Interface.storyboard in Resources */,
-				71CE27E827A5A913009C0AFC /* usage.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71220E7F24D6FC7F00BA6013 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71220E9624D6FC7F00BA6013 /* Preview Assets.xcassets in Resources */,
-				714290A02936A46400F457CA /* Localizable.strings in Resources */,
 				71220E9324D6FC7F00BA6013 /* Assets.xcassets in Resources */,
+				71CE27E827A5A913009C0AFC /* usage.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA39AD0CF9D03A7FF7A67F86 /* SmokeTests.swift in Sources */,
+				CA39AD0CF9D03A7FF7A67F86 /* HomeIndicator WatchKit ExtensionTests/SmokeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,21 +440,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5E4B341116BEDE6CC854B7BE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "HomeIndicator WatchKit Extension";
-			target = 71220E8024D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */;
-			targetProxy = FAEEC6E36E52552B6D852609 /* PBXContainerItemProxy */;
-		};
 		71220E7524D6FC7700BA6013 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 71220E7124D6FC7700BA6013 /* HomeIndicator WatchKit App */;
 			targetProxy = 71220E7424D6FC7700BA6013 /* PBXContainerItemProxy */;
-		};
-		71220E8424D6FC7F00BA6013 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 71220E8024D6FC7F00BA6013 /* HomeIndicator WatchKit Extension */;
-			targetProxy = 71220E8324D6FC7F00BA6013 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -570,6 +503,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -603,6 +538,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -621,6 +557,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -631,6 +568,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -664,6 +603,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -675,6 +615,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,70 +623,19 @@
 			};
 			name = Release;
 		};
-		71220E9C24D6FC8000BA6013 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HomeIndicator WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 95VBBVY9CC;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "HomeIndicator WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		71220E9D24D6FC8000BA6013 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HomeIndicator WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 95VBBVY9CC;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "HomeIndicator WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
 		71220EA024D6FC8000BA6013 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
-				IBSC_MODULE = HomeIndicator_WatchKit_Extension;
 				INFOPLIST_FILE = "HomeIndicator WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -761,13 +651,16 @@
 		71220EA124D6FC8000BA6013 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95VBBVY9CC;
-				IBSC_MODULE = HomeIndicator_WatchKit_Extension;
 				INFOPLIST_FILE = "HomeIndicator WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shitamori.HomeIndicator.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -822,15 +715,6 @@
 			buildConfigurations = (
 				71220E9924D6FC8000BA6013 /* Debug */,
 				71220E9A24D6FC8000BA6013 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		71220E9B24D6FC8000BA6013 /* Build configuration list for PBXNativeTarget "HomeIndicator WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				71220E9C24D6FC8000BA6013 /* Debug */,
-				71220E9D24D6FC8000BA6013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
