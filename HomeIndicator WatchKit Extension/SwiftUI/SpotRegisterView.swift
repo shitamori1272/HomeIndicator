@@ -11,7 +11,7 @@ import MapKit
 import Foundation
 
 struct SpotRegisterView: View {
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @State private var newName: String = ""
     @State private var mapCameraPosition: MapCameraPosition = .automatic
@@ -21,9 +21,9 @@ struct SpotRegisterView: View {
     var body: some View {
         VStack {
             ZStack {
-                Map(position: $mapCameraPosition) {
-                    UserAnnotation()
-                }
+                Map(
+                    position: $mapCameraPosition
+                )
                 .onMapCameraChange { context in
                     viewModel.mapRegion = context.region
                 }
@@ -34,7 +34,7 @@ struct SpotRegisterView: View {
             TextField(localized("spot_register.input_name_placeholder", "登録名の入力"), text: $newName)
             Button(localized("spot_register.register_current_spot", "この地点を登録する")) {
                 viewModel.registerButtonTapped(name: newName, coordinates: viewModel.mapRegion.center)
-                dismiss()
+                presentationMode.wrappedValue.dismiss()
             }.disabled(newName.isEmpty)
         }
         .onAppear {
