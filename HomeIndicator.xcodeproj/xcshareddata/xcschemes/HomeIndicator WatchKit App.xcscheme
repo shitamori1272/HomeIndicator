@@ -52,6 +52,17 @@
                ReferencedContainer = "container:HomeIndicator.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71E9EFF62F54602500927FBB"
+               BuildableName = "HomeIndicatorTests.xctest"
+               BlueprintName = "HomeIndicatorTests"
+               ReferencedContainer = "container:HomeIndicator.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
