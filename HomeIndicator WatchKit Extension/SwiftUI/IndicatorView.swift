@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import ClockKit
 
 struct IndicatorView: View {
     
@@ -104,5 +105,23 @@ struct ComplicationView: View {
 struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
         IndicatorView(angle: 0, distance: 420)
+    }
+}
+
+struct SampleGraphicRectangular_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CLKComplicationTemplateGraphicCornerCircularView(IndicatorView(angle: 0, distance: 420))
+                .previewContext()
+
+            CLKComplicationTemplateGraphicCircularView(ComplicationView(angle: 30, distance: 20))
+                .previewContext()
+
+            CLKComplicationTemplateGraphicRectangularFullView(IndicatorView(angle: 0, distance: 420))
+                .previewContext()
+
+            CLKComplicationTemplateGraphicExtraLargeCircularView(IndicatorView(angle: 0, distance: 420))
+                .previewContext()
+        }
     }
 }

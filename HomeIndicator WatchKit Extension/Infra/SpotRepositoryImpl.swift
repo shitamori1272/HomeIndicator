@@ -11,11 +11,7 @@ import Foundation
 class SpotRepositoryImpl: SpotRepository {
     
     private static let key = "spotDataList"
-    private let userDefaults: UserDefaults
-
-    init(userDefaults: UserDefaults = .standard) {
-        self.userDefaults = userDefaults
-    }
+    private let userDefaults = UserDefaults.standard
 
     func save(_ spot: SpotData) {
         var dataList = loadSpotDataList()
@@ -45,6 +41,14 @@ class SpotRepositoryImpl: SpotRepository {
 
     func findAll() -> [SpotData] {
         return loadSpotDataList()
+    }
+    
+    func getIndex() -> Int {
+        userDefaults.integer(forKey: "spotIndex")
+    }
+    
+    func setIndex(index: Int) {
+        userDefaults.set(index, forKey: "spotIndex")
     }
     
     private func loadSpotDataList() -> [SpotData] {

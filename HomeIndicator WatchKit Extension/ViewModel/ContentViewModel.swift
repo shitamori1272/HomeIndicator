@@ -27,8 +27,7 @@ protocol ContentViewModelProtocol: ObservableObject {
 @MainActor
 class ContentViewModel: ContentViewModelProtocol {
     
-    private let locationProvider: any LocationProvider
-    private let complicationSharedStore = ComplicationSharedStore()
+    let locationFetcher = LocationFetcher.shared
     
     @Published var angle: CGFloat = 0
     @Published var distance: CGFloat = 0
@@ -49,32 +48,27 @@ class ContentViewModel: ContentViewModelProtocol {
     private let indexRepository: IndexRepository
     
     init(
-        locationProvider: any LocationProvider = LocationFetcher.shared,
         spotRepository: SpotRepository = SpotRepositoryImpl(),
         indexRepository: IndexRepository = IndexRepositoryImpl()
     ) {
-        self.locationProvider = locationProvider
         self.spotRepository = spotRepository
         self.indexRepository = indexRepository
-
-        locationProvider.locationPublisher().sink { [weak self] _ in
+        
+        updateAngleAndDistance()
+        
+        locationFetcher.locationPublisher().sink { [weak self] _ in
             guard let self = self else { return }
             self.updateAngleAndDistance()
         }.store(in: &cancellables)
-
-        locationProvider.start()
-        updateAngleAndDistance()
     }
     
     func updateAngleAndDistance() {
-        guard let lastLocation = locationProvider.lastKnownLocation,
-              let lastHeading = locationProvider.lastKnownHeading,
+        guard let lastLocation = locationFetcher.lastKnownLocation,
+              let lastHeading = locationFetcher.lastKnownHeading,
               let spotData = spotData else { return }
         let rawAngle = lastLocation.angle(target: spotData.location) - Float(lastHeading.magneticHeading)
         angle = CGFloat(rawAngle.normalizedArrowAngle())
         distance = spotData.distance(from: lastLocation)
-        complicationSharedStore.save(angle: Double(angle), distance: Double(distance))
-        complicationSharedStore.reloadWidgetTimeline()
     }
     
     func onAppear() {
@@ -83,6 +77,5 @@ class ContentViewModel: ContentViewModelProtocol {
         if spotDataList.indices.contains(index) {
             spotData = spotDataList[index]
         }
-        updateAngleAndDistance()
     }
 }
